@@ -21,12 +21,56 @@ public class PracticaTres1 {
         
         String Horas = JOptionPane.showInputDialog("Teclea el numero de horas trabajadas");
          int horas = Integer.parseInt(Horas);
-        String HoraExtra = JOptionPane.showInputDialog("Teclea el numero de horas extra trabajadas");
-         int horaextra = Integer.parseInt(HoraExtra);
-         String EstadoCivil = JOptionPane.showInputDialog("Teclea tu Estado Civil");
-        String Estudios = JOptionPane.showInputDialog("Teclea tus estudios");
-             
        
-    }
+         int SueldoSemanal = 0;
+       
+         String EstadoCivil = JOptionPane.showInputDialog("Teclea tu Estado Civil: S de soltero, C de casado, V de viudo y D de\n" +
+"divorciado ");
+        String Estudios = JOptionPane.showInputDialog("Teclea tus estudios: r P de primario, M de medo y S de\n" +
+"superior");
+        
+        
+            if (horas >= 40){ 
+            SueldoSemanal = horas * 15;
+              
+        JOptionPane.showMessageDialog(null, "Tu sueldo es de " +SueldoSemanal);
+       
+            }else {  
+               
+            JOptionPane.showMessageDialog(null, "Tu sueldo es de " +horas * 10);
+           
+           }
+            
+          
+            
+               
+            if (EstadoCivil = Soltero );{
+            }
+           
+            }
+                
+                
+                
+            
+            
+         
+            
+      
+        }
+           
     
 }
+
+
+        
+      
+        
+        
+            
+        
+                
+             
+       
+  
+    
+
