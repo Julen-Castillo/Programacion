@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author 1gdaw03
  */
-public class PracticaTres1 {
+public class PracticaTres1 {  
 
     /**
      * @param args the command line arguments
@@ -24,10 +24,8 @@ public class PracticaTres1 {
        
          int SueldoSemanal = 0;
        
-         String EstadoCivil = JOptionPane.showInputDialog("Teclea tu Estado Civil: S de soltero, C de casado, V de viudo y D de\n" +
-"divorciado ");
-        String Estudios = JOptionPane.showInputDialog("Teclea tus estudios: r P de primario, M de medo y S de\n" +
-"superior");
+        
+        char Estudios = JOptionPane.showInputDialog("Teclea tus estudios: r P de primario, M de medo y S de superior").charAt(0);
         
         
             if (horas >= 40){ 
@@ -44,8 +42,14 @@ public class PracticaTres1 {
           
             
                
-            if (EstadoCivil = Soltero );{
+            do
+            {  char EstadoCivil = JOptionPane.showInputDialog("Teclea tu Estado Civil: S de soltero, C de casado, V de viudo y D de divorciado ").charAt(0); 
+          
+                   EstadoCivil = Character.toUpperCase(EstadoCivil);
             }
+                while (EstadoCivil != 'C' && EstadoCivil !='V' && EstadoCivil!= 'S' && EstadoCivil != 'D');
+            
+            
            
             }
                 
