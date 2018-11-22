@@ -23,6 +23,7 @@ public class T4Practica1E2 {
        
         }else {
             JOptionPane.showMessageDialog(null, "El mes introducido no corresponde con el orden existente ");
+            x--;
      
                
        }

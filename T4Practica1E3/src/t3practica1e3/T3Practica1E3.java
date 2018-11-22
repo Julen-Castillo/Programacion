@@ -1,4 +1,4 @@
-
+ 
 package t3practica1e3;
 
 import javax.swing.JOptionPane;
@@ -53,6 +53,9 @@ public class T3Practica1E3 {
     public static int mes;
     public static double litros;
     public static int continuar;
+    public static double litrosTotalMes =0;
+    public static double litrosTotalAño =0;
+    
 
     
       public static void main(String[] args) {
@@ -68,21 +71,38 @@ public class T3Practica1E3 {
       
       public static void tratarDatos(){
           
-          int[][] diasArray = new int[31][12]; 
+          int[] diasArray = new int[31]; 
+          int[] mesesArray = new int[12];
+          
        
 
           
           
           do {
-              for ( int x=0; x < diasArray.length; x++)
+              
+              for ( int x=0; x < 31; x++) {
+                  
               
               
-              dia = Integer.parseInt(JOptionPane.showInputDialog("Los litros caidos en el dia "+ diasArray[x][0]));
-           
+              dia = Integer.parseInt(JOptionPane.showInputDialog("Que dia es? "));
               
-              for (int i =0; i < 12; i++)
               
-              mes = Integer.parseInt( JOptionPane.showInputDialog("Introduce el mes"));
+                      
+              
+              diasArray[x]= dia;
+                      
+              litros = Double.parseDouble(JOptionPane.showInputDialog("Cuantos litros han caido en el dia "+diasArray[x]));
+              
+        
+              
+              litrosTotalMes = litrosTotalMes + litros;
+
+             // JOptionPane.showMessageDialog(null,diasArray[x] );
+              }
+              
+            //  for (int i =0; i < 12; i++)
+              
+              mes = Integer.parseInt( JOptionPane.showInputDialog("Introduce el mes "+mesesArray[i]));
                
               // mes 
               //litros
