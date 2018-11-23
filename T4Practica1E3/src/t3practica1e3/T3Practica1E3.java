@@ -51,7 +51,7 @@ public class T3Practica1E3 {
     
     public static int dia;
     public static int mes;
-    public static double litros;
+    public static int litros;
     public static int continuar;
     public static double litrosTotalMes =0;
     public static double litrosTotalAño =0;
@@ -71,14 +71,19 @@ public class T3Practica1E3 {
       
       public static void tratarDatos(){
           
+<<<<<<< Updated upstream
           int[] diasArray = new int[31]; 
           int[] mesesArray = new int[12];
           
+=======
+          int[][] datosArray = new int[12][31]; 
+          int [] litrosArray = new int[12];
+>>>>>>> Stashed changes
        
 
           
-          
           do {
+<<<<<<< Updated upstream
               
               for ( int x=0; x < 31; x++) {
                   
@@ -103,9 +108,28 @@ public class T3Practica1E3 {
             //  for (int i =0; i < 12; i++)
               
               mes = Integer.parseInt( JOptionPane.showInputDialog("Introduce el mes "+mesesArray[i]));
+=======
+              
+          dia = Integer.parseInt(JOptionPane.showInputDialog("Introduce el dia"));
+          mes = Integer.parseInt(JOptionPane.showInputDialog("Introduce el mes"));
+          litros = Integer.parseInt(JOptionPane.showInputDialog("Introduce los litros caidos"));
+          
+          datosArray[dia][mes] = litros;
+       
+        
+              for ( int x=0; x < 12; x++){
+              
+            // x = 0  i = 0
+              for (int i =0; i < 31; i++) {
+                  
+                  
+                 litrosArray[i] = litrosArray[i] + datosArray[x][i];
+                  
+  
+              }
+>>>>>>> Stashed changes
                
-              // mes 
-              //litros
+              }
          
                
                
