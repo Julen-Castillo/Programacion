@@ -32,7 +32,7 @@ public class T4Practica1E7 {
    private static void entradaDatos(int[] productos, int[] contadorProducto){
        
        
-  int continuar;
+  int continuar = 0;
         
         do{
             int CodProd = Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca el codigo del producto \n" +
@@ -46,6 +46,27 @@ public class T4Practica1E7 {
                                                                                 "8 = 256\n" +
                                                                                 "9 = 526\n" +
                                                                                 "10 = 663\n" ));
+              
+           int incorrecto; 
+     incorrecto =  Arrays.binarySearch(productos, CodProd);
+     
+     if (incorrecto < 0 || incorrecto >9){
+              
+      JOptionPane.showMessageDialog(null, "numero incorrecto");
+      }
+      
+
+        
+           
+            
+//  if( productos[] =   productos.indexOf(CodProd));
+               
+            
+
+     else {
+
+
+//indicar en caso de que el codigo no exista
             
             int NumProd = Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca el nº de productos vendidos"));
 
@@ -54,6 +75,8 @@ public class T4Practica1E7 {
             
             
             continuar = JOptionPane.showConfirmDialog(null, "Quieres introducir más datos?");
+     }
+     
         }while(continuar == 0);
         
         
@@ -65,7 +88,19 @@ public class T4Practica1E7 {
    
     private static void salidaDatos (int[]productos, int[]contadorProducto){
         
-        JOptionPane.showMessageDialog(null, Arrays.toString(productos) +"\n" +Arrays.toString(contadorProducto));
+        
+        
+         String valor = "";
+        for(int c = 0; c < contadorProducto.length; c++){
+            valor += "El producto Nº: " + productos[c] + "  Cantidad: " + contadorProducto[c] + "\n";
+        }
+        
+        
+        
+        
+        
+        
+        JOptionPane.showMessageDialog(null, "La frecuencia de las letras es: \n\n" + valor);
         
     }
 }

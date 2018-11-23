@@ -71,19 +71,17 @@ public class T3Practica1E3 {
       
       public static void tratarDatos(){
           
-<<<<<<< Updated upstream
+
           int[] diasArray = new int[31]; 
           int[] mesesArray = new int[12];
-          
-=======
+
           int[][] datosArray = new int[12][31]; 
           int [] litrosArray = new int[12];
->>>>>>> Stashed changes
-       
+      
 
           
           do {
-<<<<<<< Updated upstream
+
               
               for ( int x=0; x < 31; x++) {
                   
@@ -108,7 +106,7 @@ public class T3Practica1E3 {
             //  for (int i =0; i < 12; i++)
               
               mes = Integer.parseInt( JOptionPane.showInputDialog("Introduce el mes "+mesesArray[i]));
-=======
+
               
           dia = Integer.parseInt(JOptionPane.showInputDialog("Introduce el dia"));
           mes = Integer.parseInt(JOptionPane.showInputDialog("Introduce el mes"));
@@ -127,7 +125,7 @@ public class T3Practica1E3 {
                   
   
               }
->>>>>>> Stashed changes
+
                
               }
          

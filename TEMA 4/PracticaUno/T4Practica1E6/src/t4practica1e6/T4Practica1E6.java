@@ -9,17 +9,17 @@ public class T4Practica1E6 {
 
     public static void main(String[] args) {
         
-         int [] diasA = new int[5];
+    
         int [] codigosA = new int[5];
         int [] faltasA = new int[5];
-         int continuar = 0;
+         
+        int continuar = 0;
      
          
          do{
-         for(int i = 0; i < diasA.length; i++){ 
+       
+            int codigo = Integer.parseInt(JOptionPane.showInputDialog(null, "Introduce un codigo de alumno"));
             
-            String codigo = JOptionPane.showInputDialog(null, "Introduce un codigo de alumno");
-            int dia = Integer.parseInt(JOptionPane.showInputDialog(null, "Introduce un día"));
             int faltas = Integer.parseInt(JOptionPane.showInputDialog(null, "Introduce un número de faltas"));
           
                  
@@ -27,9 +27,15 @@ public class T4Practica1E6 {
                 codigosA[i] = Integer.parseInt(codigo);
                 diasA[i] = dia;
                 faltasA[i] = faltas;
+            
+           
             }
-            continuar = JOptionPane.showConfirmDialog(null, "Quieres introducir más datos?");
-         }}   while(continuar == 0);
+            
+             continuar = JOptionPane.showConfirmDialog(null, "Quieres introducir más datos?");}
+           
+        
+         
+            }   while(continuar == 0);
                   
            String valor = "";
         for(int c = 0; c < codigosA.length; c++){
