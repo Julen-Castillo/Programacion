@@ -14,7 +14,8 @@ public class T4Practica1E1 {
         for (int x=0; x < 12; x++)
         {
 
-       String mes = JOptionPane.showInputDialog("Introduce los meses en orden");
+       String mes = JOptionPane.showInputDialog("Introduce el mes "+ (x+1));
+            
        
        
        if (mes.equalsIgnoreCase(arrayMeses[x])){
@@ -23,8 +24,10 @@ public class T4Practica1E1 {
        
         }else {
             JOptionPane.showMessageDialog(null, "El mes introducido no corresponde con el orden existente ");
-     
-               
+            
+            
+           x--;
+             
        }
       
         }
