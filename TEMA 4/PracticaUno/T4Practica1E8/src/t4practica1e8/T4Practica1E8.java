@@ -32,15 +32,15 @@ public class T4Practica1E8 {
             
     
          
-           
-         continuar = JOptionPane.showConfirmDialog(null,"Quieres continuar?");
-         
+           continuar = JOptionPane.showConfirmDialog(null,"Quieres continuar?");
+     
+          } while (continuar == 0 );
            for(int i = 0; i < arrayMatriz.length; i++){ 
             for(int x = 0; x < arrayMatriz[i].length; x++){
                arraySuma[i] += arrayMatriz[i][x];  
     
-            
-            }  } } while (continuar == 0 );
+                
+            }  }
      
               
         JOptionPane.showMessageDialog(null, "Fila 1: " + arraySuma[0] 
