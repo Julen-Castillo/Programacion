@@ -47,7 +47,7 @@ public class T5PracticaUnoE1 {
                     
                                                                    
             
-            if (opcion > 3 || opcion < 1) {
+            if (opcion > 10 || opcion < 1) {
                 JOptionPane.showMessageDialog(null, "error");
         }
             
@@ -58,47 +58,47 @@ public class T5PracticaUnoE1 {
                     break;
                                
                 case 2:
-                    BuscarNum();
+                    BuscarNum(principal);
                     break;
                     
                     
                 case 3:
-                    BuscarNumBorrar();
+                    BuscarNumBorrar(principal);
                     break;
                              
                 case 4:
-                    ConvertirArray();
+                    ConvertirArray(principal);
                     break;   
                     
                           
                 case 5:
-                    BuscarNumNoVacio();
+                    BuscarNumNoVacio(principal);
                     break;
                     
                           
                 case 6:
-                   InsertarNumFinal();
+                   InsertarNumFinal(principal);
                     break;
                     
                           
                 case 7:
-                    InsertarNumPosicion();
+                    InsertarNumPosicion(principal);
                     break;
                     
                           
                 case 8:
-                    BorrarElementoPosicion();
+                    BorrarElementoPosicion(principal);
                     break;
                     
                     
                           
                 case 9:
-                    CalcularSuma();
+                    CalcularSuma(principal);
                     break;
                     
          
                 case 10:
-                    SalirPrograma();
+                    SalirPrograma(principal);
                     break;
                 default:
                     break;
@@ -150,23 +150,126 @@ public class T5PracticaUnoE1 {
         }
 
         
-        
-        
-        
-        
-        
-        
-        
-        
+        public static void BuscarNum(ArrayList<Double> principal){ 
             
+            double numero = Double.parseDouble(JOptionPane.showInputDialog("Introduce un numero"));
             
-            
-            
+            for (int x = 0; x < principal.size(); x++){
+                
+                
+              if (numero == principal.get(x)){
+                  
+                  JOptionPane.showMessageDialog(null, "Tu numero existe");
+           
+              }
+              
+              else {  JOptionPane.showMessageDialog(null, "Tu numero no existe");
+                  
+              }    
+            }
+     
         } 
+        
+      public static void BuscarNumBorrar(ArrayList<Double> principal){    
+          
+          
+          double numero = Double.parseDouble(JOptionPane.showInputDialog("Introduce un numero"));
+         
+          for (int x = 0; x < principal.size(); x++){
+              
+               if (numero == principal.get(x)){
+                   
+                   principal.remove(x);
+               }
+               
+               else { JOptionPane.showMessageDialog(null, "Tu numero no se puede borrar ya que no existe, saludos");
+               
+               }
+          }
 
+      
+      
+      }
+      
+      
+  public static void  BuscarNumNoVacio(ArrayList<Double>principal){
+      
+      String valor = "";
+        for(int x = 0; x < principal.size(); x++){
+         JOptionPane.showMessageDialog(null, "Valor " + principal.get(x) + " en la posicion "+ (x+1) );
+        }
+ 
+  }
+  
+  
+  public static void InsertarNumFinal(ArrayList<Double>principal){
+      
+      principal.add(Double.parseDouble(JOptionPane.showInputDialog("Introduce un numero"))); 
+      
+      JOptionPane.showMessageDialog(null, "El numero se ha añadido en la ultima posicion");
+      
+      
+  }
+  
+   public static void InsertarNumPosicion(ArrayList<Double>principal){
+       
+       double numero = Double.parseDouble(JOptionPane.showInputDialog("Introduce un numero"));
+       
+       int posicion = Integer.parseInt(JOptionPane.showInputDialog("Introduce un posicion"));
+       
+
+      principal.add(posicion,numero);
+       
+       
+       
+   }
+  
+  public static void BorrarElementoPosicion(ArrayList<Double>principal){
+  
+      
+      
+      int posicion = Integer.parseInt(JOptionPane.showInputDialog("Introduce un posicion para borrar su elemento"));
+      
+         principal.remove(posicion);
+         
+         JOptionPane.showMessageDialog(null, "Hemos borrado el valor de la posicion introducida");
+  
+  }
+  
+  
+ public static void CalcularSuma(ArrayList<Double>principal){
+     
+    
+     
+     
+     
+     double numero = Double.parseDouble(JOptionPane.showInputDialog("Introduce el numero 1"));
+     
+     double numero2 = Double.parseDouble(JOptionPane.showInputDialog("Introduce el numero 2"));
+     
+     
+     double suma = numero + numero2;
+     double media = suma / 2;
+     
+     JOptionPane.showMessageDialog(null, "La suma es "+suma);
+     JOptionPane.showMessageDialog(null, "La media es "+media);
+ }
+ 
+ public static void SalirPrograma(ArrayList<Double>principal) {
+        System.exit(0);
+ 
+ 
+ }
+ 
+ public static void ConvertirArray(ArrayList<Double>principal) {
 }
+}
+  
+
 
 
 
     
 
+
+            
