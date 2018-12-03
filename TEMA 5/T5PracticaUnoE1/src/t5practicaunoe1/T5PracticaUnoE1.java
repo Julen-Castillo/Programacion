@@ -6,7 +6,9 @@
 package t5practicaunoe1;
 
 import java.util.ArrayList;
+import java.util.PrimitiveIterator;
 import javax.swing.JOptionPane;
+import sun.awt.image.IntegerComponentRaster;
 
 
 public class T5PracticaUnoE1 {
@@ -31,6 +33,8 @@ public class T5PracticaUnoE1 {
     
     do  {
         
+          JOptionPane.showMessageDialog(null, "este es tu array " + principal);
+        
             
             opcion = Integer.parseInt(JOptionPane.showInputDialog("Elige una opcion \n"
                                                                 + "1.Visualizar Max y Min \n"
@@ -40,7 +44,7 @@ public class T5PracticaUnoE1 {
                                                                 + "5.Si no esta vació buscar numero \n"
                                                                 + "6.Insertar elemento al final \n"
                                                                 + "7.Inserrtar elemento en posicion indicada \n"
-                                                                + "8.Borrar elemento de posicion indicada"
+                                                                + "8.Borrar elemento de posicion indicada \n"
                                                                 + "9.Calcular la suma \n"
                                                                 + "10.Salir \n"));
                     
@@ -121,6 +125,8 @@ public class T5PracticaUnoE1 {
           
         continuar = JOptionPane.showConfirmDialog(null, "Quieres continuar?");
         
+         
+        
         }while (continuar == 0);
         
         return principal;
@@ -139,7 +145,7 @@ public class T5PracticaUnoE1 {
                 max = principal.get(i);
             }
         }
-        double min = 100;
+        double min = 1000;
         for (int i = 0; i < principal.size(); i++) {
             if (principal.get(i) < min) {
                 min = principal.get(i);
@@ -148,8 +154,12 @@ public class T5PracticaUnoE1 {
         JOptionPane.showMessageDialog(null,"Máximo: " + max + " y " + "Minimo: " + min);
 
         }
+    
+    
+    
 
         
+
         public static void BuscarNum(ArrayList<Double> principal){ 
             
             double numero = Double.parseDouble(JOptionPane.showInputDialog("Introduce un numero"));
@@ -163,9 +173,9 @@ public class T5PracticaUnoE1 {
            
               }
               
-              else {  JOptionPane.showMessageDialog(null, "Tu numero no existe");
+      
                   
-              }    
+                  
             }
      
         } 
@@ -175,11 +185,12 @@ public class T5PracticaUnoE1 {
           
           double numero = Double.parseDouble(JOptionPane.showInputDialog("Introduce un numero"));
          
-          for (int x = 0; x < principal.size(); x++){
+       
               
-               if (numero == principal.get(x)){
+               if (principal.contains(numero)){
                    
-                   principal.remove(x);
+                   principal.remove(numero);
+                   JOptionPane.showMessageDialog(null, "Tu numero ha sido exterminado");
                }
                
                else { JOptionPane.showMessageDialog(null, "Tu numero no se puede borrar ya que no existe, saludos");
@@ -189,7 +200,7 @@ public class T5PracticaUnoE1 {
 
       
       
-      }
+      
       
       
   public static void  BuscarNumNoVacio(ArrayList<Double>principal){
@@ -226,13 +237,17 @@ public class T5PracticaUnoE1 {
   
   public static void BorrarElementoPosicion(ArrayList<Double>principal){
   
-      
+      JOptionPane.showMessageDialog(null, "este es tu array " + principal);
       
       int posicion = Integer.parseInt(JOptionPane.showInputDialog("Introduce un posicion para borrar su elemento"));
       
-         principal.remove(posicion);
+
+      
+         principal.remove(posicion-1);
          
          JOptionPane.showMessageDialog(null, "Hemos borrado el valor de la posicion introducida");
+         
+            JOptionPane.showMessageDialog(null, "este es tu array despues de eliminar la posicion " + principal);
   
   }
   
@@ -240,21 +255,17 @@ public class T5PracticaUnoE1 {
  public static void CalcularSuma(ArrayList<Double>principal){
      
     
+     double suma = 0;
+     
+     for (int x = 0; x < principal.size();x++)
+         
+         suma = suma + principal.get(x);
+     
+     JOptionPane.showMessageDialog(null, "La suma de todos los numeros es: " + suma + " y la media aritmetica es: " + suma/principal.size());
      
      
-     
-     double numero = Double.parseDouble(JOptionPane.showInputDialog("Introduce el numero 1"));
-     
-     double numero2 = Double.parseDouble(JOptionPane.showInputDialog("Introduce el numero 2"));
-     
-     
-     double suma = numero + numero2;
-     double media = suma / 2;
-     
-     JOptionPane.showMessageDialog(null, "La suma es "+suma);
-     JOptionPane.showMessageDialog(null, "La media es "+media);
- }
  
+ }
  public static void SalirPrograma(ArrayList<Double>principal) {
         System.exit(0);
  
@@ -262,9 +273,47 @@ public class T5PracticaUnoE1 {
  }
  
  public static void ConvertirArray(ArrayList<Double>principal) {
+     
+     Double[] array;
+     array = principal.toArray(new Double[principal.size()]);
 }
 }
   
+
+
+    
+        
+      
+
+        
+
+       
+   
+       
+  
+     
+    
+       
+           
+           
+           
+       
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+    
+    
+
+
+
+    
 
 
 
