@@ -1,20 +1,34 @@
 
 package Modelo;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Estudio {
 private String nombre;
 private String ciudad;
 private String direccion;
 private String dirWeb;
 
-    public Estudio(String nombre, String ciudad, String direccion, String dirWeb, String pais, String fechaFundacion) {
+//LocalDate
+private String pais;
+private ArrayList<String> telefonos;
+private String fechaFundacion; 
+
+    public Estudio(String nombre, String ciudad, String direccion, String dirWeb, String pais, ArrayList<String> telefonos, String fechaFundacion) {
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.dirWeb = dirWeb;
         this.pais = pais;
+        this.telefonos = telefonos;
         this.fechaFundacion = fechaFundacion;
     }
+
+    public Estudio() {
+    }
+
+
 
     public String getNombre() {
         return nombre;
@@ -56,6 +70,14 @@ private String dirWeb;
         this.pais = pais;
     }
 
+    public ArrayList<String> getTelefonos() {
+        return telefonos;
+    }
+
+    public void setTelefonos(ArrayList<String> telefonos) {
+        this.telefonos = telefonos;
+    }
+
     public String getFechaFundacion() {
         return fechaFundacion;
     }
@@ -63,8 +85,13 @@ private String dirWeb;
     public void setFechaFundacion(String fechaFundacion) {
         this.fechaFundacion = fechaFundacion;
     }
-private String pais;
-private String fechaFundacion; 
-              
-    
+
+
+
+
 }
+
+
+/* private ArrayList <Pelicula>       || clase extend para herencia */
+
+  
