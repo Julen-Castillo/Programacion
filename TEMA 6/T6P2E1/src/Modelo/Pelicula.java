@@ -1,21 +1,23 @@
 
 package Modelo;
 
+import java.util.ArrayList;
+
 public class Pelicula {
     
   private String titulo;
   private char año;
   private float duracion;
   private String tipo;
+  // relacion 
 
-    public Pelicula(String titulo, char año, float duracion, String tipo) {
+    public Pelicula(String titulo, char año, float duracion, String tipo, ArrayList<Estudio> listaEstudios) {
         this.titulo = titulo;
         this.año = año;
         this.duracion = duracion;
         this.tipo = tipo;
+        this.listaEstudios = listaEstudios;
     }
-
-
 
     public String getTitulo() {
         return titulo;
@@ -48,7 +50,26 @@ public class Pelicula {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    public ArrayList<Estudio> getListaEstudios() {
+        return listaEstudios;
+    }
+
+    public void setListaEstudios(ArrayList<Estudio> listaEstudios) {
+        this.listaEstudios = listaEstudios;
+    }
   
   
+  private ArrayList<Estudio> listaEstudios;
+
+   
     
+
+    public void modificarPelicula () {}
+     
+   public void eliminarPelicula(){}
+   
+   public  Estudio[] desplieguePelicula(){return null;
+}
+  // return null
 }

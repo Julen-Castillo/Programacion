@@ -20,9 +20,14 @@ public class Empleado extends Persona {
     }
 
   
-      public void mostrar(){}
-      public int calcular_salario_neto(){
-          return 0;
-                                        }
+  
+      @Override
+      public String mostrar(){
+          return this.getNombre() + " " + this.getEdad() + " " + this.getSueldo_bruto();
+      }
+    
+      public Double calcular_salario_neto(){
+          return null;
+                                           }
 }
 

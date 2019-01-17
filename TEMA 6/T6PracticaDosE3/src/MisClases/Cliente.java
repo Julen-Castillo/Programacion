@@ -4,6 +4,11 @@ package MisClases;
 
 public class Cliente extends Persona {
 
+    
+    private String telefono_de_contacto;
+    
+    
+    
     public String getTelefono_de_contacto() {
         return telefono_de_contacto;
     }
@@ -17,8 +22,9 @@ public class Cliente extends Persona {
         this.telefono_de_contacto = telefono_de_contacto;
     }
     
-    private String telefono_de_contacto;
     
-     
-     public void mostrar(){}
+    
+     @Override 
+     public String mostrar(){ 
+     return this.getNombre() + " " + this.getEdad() + " " + this.getTelefono_de_contacto();}
 }

@@ -9,11 +9,8 @@ public class Persona {
     public Persona(String nombre, Integer edad) {
         this.nombre = nombre;
         this.edad = edad;
-    }
+    } 
 
-     
-     
-     
     public String getNombre() {
         return nombre;
     }
@@ -30,6 +27,7 @@ public class Persona {
         this.edad = edad;
     }
     
-     public void mostrar(){}
+     public String mostrar(){
+     return this.nombre + " " + this.edad;}
     
 }

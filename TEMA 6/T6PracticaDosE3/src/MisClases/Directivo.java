@@ -1,11 +1,16 @@
 
 package MisClases;
 
+import java.util.ArrayList;
+
 public class Directivo extends Empleado{
     
     
     
     private String categoria;
+    
+    //relacion con empleado
+    private ArrayList<Empleado> subordinados;
 
     public String getCategoria() {
         return categoria;
@@ -15,10 +20,26 @@ public class Directivo extends Empleado{
         this.categoria = categoria;
     }
     
-      public void mostrar(){}
+  
+    public ArrayList<Empleado> getSubordinados() {
+        return subordinados;
+    }
 
-    public Directivo(String categoria, Integer sueldo_bruto, String nombre, Integer edad) {
+    public void setSubordinados(ArrayList<Empleado> subordinados) {
+        this.subordinados = subordinados;
+    }
+
+    public Directivo(String categoria, ArrayList<Empleado> subordinados, Integer sueldo_bruto, String nombre, Integer edad) {
         super(sueldo_bruto, nombre, edad);
         this.categoria = categoria;
+        this.subordinados = subordinados;
     }
-}
+
+   @Override
+       public String mostrar(){
+      return this.getNombre() + " " + this.getEdad() + " " + this.getSueldo_bruto() + " " + this.getCategoria();}
+    }
+
+
+    
+

@@ -1,12 +1,14 @@
 
 package MisClases;
 
+import java.util.ArrayList;
+
 
 public class Empresa {
     
  private String nombre;
- private Cliente clientes;
- private Empleado empleados;
+ private ArrayList<Cliente>listaClientes;
+ private ArrayList <Empleado>listaEmpleados;
 
     public String getNombre() {
         return nombre;
@@ -16,26 +18,39 @@ public class Empresa {
         this.nombre = nombre;
     }
 
-    public Cliente getClientes() {
-        return clientes;
+    public ArrayList<Cliente> getListaClientes() {
+        return listaClientes;
     }
 
-    public void setClientes(Cliente clientes) {
-        this.clientes = clientes;
+    public void setListaClientes(ArrayList<Cliente> listaClientes) {
+        this.listaClientes = listaClientes;
     }
 
-    public Empleado getEmpleados() {
-        return empleados;
+    public ArrayList<Empleado> getListaEmpleados() {
+        return listaEmpleados;
     }
 
-    public void setEmpleados(Empleado empleados) {
-        this.empleados = empleados;
+    public void setListaEmpleados(ArrayList<Empleado> listaEmpleados) {
+        this.listaEmpleados = listaEmpleados;
     }
 
-    public Empresa(String nombre, Cliente clientes, Empleado empleados) {
+    public Empresa(String nombre, ArrayList<Cliente> listaClientes, ArrayList<Empleado> listaEmpleados) {
         this.nombre = nombre;
-        this.clientes = clientes;
-        this.empleados = empleados;
+        this.listaClientes = listaClientes;
+        this.listaEmpleados = listaEmpleados;
     }
-    
+
+  
+    public void setEmpleado (Empleado e) {
+        listaEmpleados.add(e);
+        
+    }
+    public Empleado getEmpleado (int x){
+       return listaEmpleados.get(x);
+
 }
+
+}
+
+    
+
