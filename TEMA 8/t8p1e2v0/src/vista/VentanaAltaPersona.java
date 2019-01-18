@@ -120,8 +120,8 @@ private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
          
          T8p1e2.altaPersona(tfNombre.getText(),tfApellidos.getText(),tfDni.getText());
 
-         Pattern patron = Pattern.compile("^[A-Z][a-z]+ $");
-                Matcher m = patron.matcher(tfNombre.getText());
+         Pattern patron = Pattern.compile("^[A-Z][a-z]+ $");              
+         Matcher m = patron.matcher(tfNombre.getText());
                 if (!m.matches()){
                     
                         JOptionPane.showMessageDialog(null, "El nombre está mal escrito");
