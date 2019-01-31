@@ -23,6 +23,7 @@ public class EjercicioZoo {
        ventanaSocio = new Ventana1();
         ventanaSocio.setVisible(true);
         
+        
     
  
     }
