@@ -4,8 +4,8 @@ package Clases;
 
 public class Personal {
 
-    private String usuario;
-    private String contraseña;
+  public String usuario;
+   public String contraseña;
 
     public Personal() {
     }
