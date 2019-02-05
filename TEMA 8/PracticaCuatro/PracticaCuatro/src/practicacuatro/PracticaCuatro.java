@@ -78,24 +78,31 @@ public class PracticaCuatro {
         aContrato[2] = new Contrato();
         aContrato[2].setDescripcion("Parcial"); 
   
+        lPersonal = new ArrayList<Personal>();
+    
+        administrador = new Personal("Castillo","123");
+    
+    
+        lPersonal.add(administrador);
         
        aEmpleado = new ArrayList<Empleados>();
        
-       oEmpleado = new Empleados("12345678F","11111111","Julen","Castillo","C/Arrabal N5","666666666",'M','S',"05/02/2019","10",aContrato[0],aDepartamento[0],lPersonal.get(0));
+       oEmpleado = new Empleados("12345678F","11111111","Julen","Castillo","C/Arrabal N5","666666666",'M','S',"05/02/2019","10",
+               aContrato[0],aDepartamento[0],lPersonal.get(0));
        aEmpleado.add(oEmpleado);
 
        
         
    
   /*  crear usuario administrador */
-   
-
+    
+ 
         lPersonal = new ArrayList<Personal>();
     
     administrador = new Personal();
     
-    administrador.setUsuario("Castillo");
-    administrador.setContraseña("123");
+    administrador.setUsuario("a");
+    administrador.setContraseña("a");
     
     lPersonal.add(administrador);
     
@@ -106,8 +113,7 @@ public class PracticaCuatro {
    public static void comprobarUsuario(String Usuario, String Contraseña){
        
        boolean check = false;
-       
-      
+
      
        if(Usuario.equals(administrador.getUsuario())&& Contraseña.equals(administrador.getContraseña())){           
             check = true;
@@ -140,16 +146,31 @@ public class PracticaCuatro {
       public static void  llenarCombobox(JComboBox combo){
          
            
-     
-		
-          for(int x = 0; aDepartamento.length > x; x++){
+	
+          for(int x = 0; aContrato.length > x; x++){
           
-                combo.addItem(aDepartamento[x].getNombre());
-		
-		
+                combo.addItem(aContrato[x].getDescripcion());
+               	
           }
-            
-            
-       
+          
+//          
+//      
+//          }
+//            
+    
    }
+      public static void llenarCombobox2(JComboBox combo2){
+          
+          
+              for(int y = 0; aDepartamento.length > y; y++){
+             combo2.addItem(aDepartamento[y].getNombre());
+          
+//          no puedo añadir los objetos Departamento a el combobox de departamento (no se ven)
+      }
+      }
+      
+      public static void darAlta(String dni,String nss,String nombre, String apellido, String direccion, String telefono,
+              Character sexo, Character estadoCivil,JComboBox tipoContrato, JComboBox departamento,String fechaAlta, String numEmpleado) {
+        
+    }
 }

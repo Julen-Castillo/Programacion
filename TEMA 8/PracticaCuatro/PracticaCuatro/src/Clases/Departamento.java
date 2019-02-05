@@ -9,6 +9,10 @@ public class Departamento {
     
     public String nombre;
     private ArrayList<Empleados> listaEmpleados;
+
+    public Departamento(String nombre) {
+        this.nombre = nombre;
+    }
    
     
     public Departamento() {

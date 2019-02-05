@@ -15,6 +15,7 @@ public class VentanaAlta extends javax.swing.JFrame {
     public VentanaAlta() {
         initComponents();
         PracticaCuatro.llenarCombobox(cbTipoContrato);
+        PracticaCuatro.llenarCombobox2(cbDepartamento);
     }
 
 
@@ -125,6 +126,7 @@ public class VentanaAlta extends javax.swing.JFrame {
         });
 
         cbDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        cbDepartamento.setSelectedIndex(-1);
         cbDepartamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbDepartamentoActionPerformed(evt);
@@ -304,7 +306,7 @@ public class VentanaAlta extends javax.swing.JFrame {
     }   
     else {
         
-        Sexo = 'M';
+        Sexo = 'F';
     }
     
     if(rbCasado.isSelected()) {
@@ -318,8 +320,11 @@ public class VentanaAlta extends javax.swing.JFrame {
         EstadoCivil = 'S';
     }
     
+    PracticaCuatro.darAlta(tfDni.getText(),tfNss.getText(),tfNombre.getText(),tfApellidos.getText(),
+            tfDireccion.getText(),tfTelefono.getText(),Sexo,EstadoCivil,
+           cbTipoContrato.getSelectedItem(),cbDepartamento.getSelectedObjects(),tfFecha.getText(),tfNumEmpleado.getText());
  
-     
+//     No puedo pasar los combobox a string 
     }//GEN-LAST:event_bAceptarActionPerformed
 
     private void rbSolteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSolteroActionPerformed
