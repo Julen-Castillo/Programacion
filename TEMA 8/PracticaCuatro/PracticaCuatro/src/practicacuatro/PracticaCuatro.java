@@ -6,9 +6,11 @@ import Clases.Departamento;
 import Clases.Empleados;
 import Clases.Personal;
 import Vista.InicioSesion;
+import Vista.Menu;
 import Vista.VentanaAlta;
 import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 
@@ -16,12 +18,9 @@ public class PracticaCuatro {
 
     private static Departamento aDepartamento[];
     private static Contrato aContrato[];
+    private static ArrayList<Personal> lPersonal;
     private static Personal administrador;
-
-    public PracticaCuatro() {
-    }
-    
-    
+   
     private static ArrayList<Empleados> aEmpleado;
     
     private static Empleados oEmpleado;
@@ -31,19 +30,21 @@ public class PracticaCuatro {
     private static String operacion;
     
     
+    
     /* Contador fallos */
     
     private static int cErrores = 0;
     
     private static InicioSesion v;
-     private static VentanaAlta vAlta;
+    private static VentanaAlta vAlta;
+    private static Menu vMenu;
   
    
     public static void main(String[] args) {
         
-        generarDatos();  
+             generarDatos();  
         
-          v = new InicioSesion();
+           v = new InicioSesion();
            v.setVisible(true);
            
            
@@ -77,14 +78,27 @@ public class PracticaCuatro {
         aContrato[2] = new Contrato();
         aContrato[2].setDescripcion("Parcial"); 
   
-   
+        
+       aEmpleado = new ArrayList<Empleados>();
+       
+       oEmpleado = new Empleados("12345678F","11111111","Julen","Castillo","C/Arrabal N5","666666666",'M','S',"05/02/2019","10",aContrato[0],aDepartamento[0],lPersonal.get(0));
+       aEmpleado.add(oEmpleado);
+
+       
+        
    
   /*  crear usuario administrador */
    
 
+        lPersonal = new ArrayList<Personal>();
+    
     administrador = new Personal();
+    
     administrador.setUsuario("Castillo");
     administrador.setContraseña("123");
+    
+    lPersonal.add(administrador);
+    
     
  
     }
@@ -95,51 +109,47 @@ public class PracticaCuatro {
        
       
      
-       if(Usuario.equals(administrador.getUsuario())&& Contraseña.equals(administrador.getContraseña())){
-           
-           check = true;
-              v.setVisible(false);
-              vAlta = new VentanaAlta();
-             vAlta.setVisible(true);
-          
-        
+       if(Usuario.equals(administrador.getUsuario())&& Contraseña.equals(administrador.getContraseña())){           
+            check = true;
+            v.setVisible(false);
+            vMenu = new Menu();
+            vMenu.setVisible(true);       
        }
-       else {
-           
-           
+       else {         
           cErrores++;
-           JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrectos te quedan " + cErrores + " intentos");
-        
-       
+           JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrectos has fallado " + cErrores + " veces");
+           
                  if (cErrores == 3){
-        
-        
+  
                   JOptionPane.showMessageDialog(null, "No estas autorizado para entrar al tren del mame");
                  v.setVisible(false);
-    }
-           
-       }
-         
-    
-    
+    }            
+   }
+   }
    
-      
-          
-           
+   public static void crearVentanaAlta(){
        
+       vMenu.setVisible(false);
+       vAlta = new VentanaAlta();
+       vAlta.setVisible(true);
        
-      
-      
-  
-
-      
-       
-       
+               
        
    }
-
-        
- 
-        
-    
+   
+      public static void  llenarCombobox(JComboBox combo){
+         
+           
+     
+		
+          for(int x = 0; aDepartamento.length > x; x++){
+          
+                combo.addItem(aDepartamento[x].getNombre());
+		
+		
+          }
+            
+            
+       
+   }
 }

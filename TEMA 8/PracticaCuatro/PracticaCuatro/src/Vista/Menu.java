@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import practicacuatro.PracticaCuatro;
+
 /**
  *
  * @author 1gdaw03
@@ -31,14 +33,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        mListado = new javax.swing.JMenu();
+        miAlta = new javax.swing.JMenuItem();
+        miModificacion = new javax.swing.JMenuItem();
+        miBaja = new javax.swing.JMenuItem();
+        miListado = new javax.swing.JMenu();
+        miNumEmpleado = new javax.swing.JMenuItem();
+        miContrato = new javax.swing.JMenuItem();
+        miDepartamento = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         jMenu3.setText("jMenu3");
@@ -50,46 +52,46 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setText("Indica que operacion desea realizar");
 
-        jMenu1.setText("Personas");
+        mListado.setText("Personas");
 
-        jMenuItem1.setText("Alta");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        miAlta.setText("Alta");
+        miAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                miAltaActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        mListado.add(miAlta);
 
-        jMenuItem2.setText("Modificacion");
-        jMenu1.add(jMenuItem2);
+        miModificacion.setText("Modificacion");
+        mListado.add(miModificacion);
 
-        jMenuItem3.setText("Baja");
-        jMenu1.add(jMenuItem3);
+        miBaja.setText("Baja");
+        mListado.add(miBaja);
 
-        jMenu4.setText("Listado");
+        miListado.setText("Listado");
 
-        jMenuItem5.setText("Por número de empleado");
-        jMenu4.add(jMenuItem5);
+        miNumEmpleado.setText("Por número de empleado");
+        miListado.add(miNumEmpleado);
 
-        jMenuItem4.setText("Por contrato");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        miContrato.setText("Por contrato");
+        miContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                miContratoActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem4);
+        miListado.add(miContrato);
 
-        jMenuItem6.setText("Por departamento");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        miDepartamento.setText("Por departamento");
+        miDepartamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                miDepartamentoActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem6);
+        miListado.add(miDepartamento);
 
-        jMenu1.add(jMenu4);
+        mListado.add(miListado);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(mListado);
 
         jMenu2.setText("Salir");
         jMenuBar1.add(jMenu2);
@@ -112,7 +114,7 @@ public class Menu extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
+                .addContainerGap(132, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
@@ -122,17 +124,17 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void miAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaActionPerformed
+       PracticaCuatro.crearVentanaAlta();
+    }//GEN-LAST:event_miAltaActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void miContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miContratoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_miContratoActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void miDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miDepartamentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_miDepartamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,16 +174,16 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenu mListado;
+    private javax.swing.JMenuItem miAlta;
+    private javax.swing.JMenuItem miBaja;
+    private javax.swing.JMenuItem miContrato;
+    private javax.swing.JMenuItem miDepartamento;
+    private javax.swing.JMenu miListado;
+    private javax.swing.JMenuItem miModificacion;
+    private javax.swing.JMenuItem miNumEmpleado;
     // End of variables declaration//GEN-END:variables
 }

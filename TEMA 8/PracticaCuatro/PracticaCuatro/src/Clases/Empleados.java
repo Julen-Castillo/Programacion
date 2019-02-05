@@ -14,19 +14,18 @@ public class Empleados {
     private String telefno;
     private char sexo;
     private char estadoCivil;
-    private LocalDate fechaAlta;
+    private String fechaAlta;
     private String numeroEmpleado;
     
     
     private Contrato c;
     private Departamento d;
-    
     private Personal p;
 
     public Empleados() {
     }
 
-    public Empleados(String dni, String nss, String nombre, String apellidos, String direccion, String telefno, char sexo, char estadoCivil, LocalDate fechaAlta, String numeroEmpleado, Contrato c, Departamento d, Personal p) {
+    public Empleados(String dni, String nss, String nombre, String apellidos, String direccion, String telefno, char sexo, char estadoCivil, String fechaAlta, String numeroEmpleado, Contrato c, Departamento d, Personal p) {
         this.dni = dni;
         this.nss = nss;
         this.nombre = nombre;
@@ -106,11 +105,11 @@ public class Empleados {
         this.estadoCivil = estadoCivil;
     }
 
-    public LocalDate getFechaAlta() {
+    public String getFechaAlta() {
         return fechaAlta;
     }
 
-    public void setFechaAlta(LocalDate fechaAlta) {
+    public void setFechaAlta(String fechaAlta) {
         this.fechaAlta = fechaAlta;
     }
 
