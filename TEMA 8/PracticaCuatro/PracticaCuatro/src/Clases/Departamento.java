@@ -28,7 +28,7 @@ public class Departamento {
     }
 
     public void setNombre(String Nombre) {
-        this.nombre = nombre;
+        this.nombre = Nombre;
     }
 
     public ArrayList<Empleados> getListaEmpleados() {

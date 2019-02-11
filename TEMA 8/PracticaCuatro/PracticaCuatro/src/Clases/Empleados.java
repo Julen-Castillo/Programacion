@@ -25,6 +25,7 @@ public class Empleados {
     public Empleados() {
     }
 
+    
     public Empleados(String dni, String nss, String nombre, String apellidos, String direccion, String telefno, char sexo, char estadoCivil, String fechaAlta, String numeroEmpleado, Contrato c, Departamento d, Personal p) {
         this.dni = dni;
         this.nss = nss;

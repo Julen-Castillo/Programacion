@@ -8,14 +8,22 @@ import practicacuatro.PracticaCuatro;
  * @author 1gdaw03
  */
 public class VentanaAlta extends javax.swing.JFrame {
+    
+private String operacionActiva;
 
-    /**
-     * Creates new form VentanaAlta
-     */
-    public VentanaAlta() {
+ private int comboContrato;
+ private int comboDepartamento;
+ 
+    public VentanaAlta(String operacion) {
         initComponents();
         PracticaCuatro.llenarCombobox(cbTipoContrato);
         PracticaCuatro.llenarCombobox2(cbDepartamento);
+           
+           String operacionActiva = operacion;
+    }
+
+    private VentanaAlta() {
+       
     }
 
 
@@ -296,7 +304,10 @@ public class VentanaAlta extends javax.swing.JFrame {
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
  
-        
+       
+        if (operacionActiva.contains("alta"))  
+                {
+      
       Character Sexo;
       Character  EstadoCivil;
         
@@ -319,14 +330,41 @@ public class VentanaAlta extends javax.swing.JFrame {
         
         EstadoCivil = 'S';
     }
+     comboContrato = cbTipoContrato.getSelectedIndex();
+     comboDepartamento = cbDepartamento.getSelectedIndex();
+  
     
     PracticaCuatro.darAlta(tfDni.getText(),tfNss.getText(),tfNombre.getText(),tfApellidos.getText(),
             tfDireccion.getText(),tfTelefono.getText(),Sexo,EstadoCivil,
-           cbTipoContrato.getSelectedItem(),cbDepartamento.getSelectedObjects(),tfFecha.getText(),tfNumEmpleado.getText());
+          comboContrato,comboDepartamento,tfFecha.getText(),tfNumEmpleado.getText());
+    
+    
+ 
+
+   tfDni.setText("");
+   tfNss.setText("");
+   tfNombre.setText("");
+   tfApellidos.setText("");
+   tfDireccion.setText("");
+   tfTelefono.setText("");
+   tfFecha.setText("");
+   tfNumEmpleado.setText("");
+                }
+   
+    
  
 //     No puedo pasar los combobox a string 
     }//GEN-LAST:event_bAceptarActionPerformed
 
+    
+
+        
+        
+        
+    
+    
+    
+    
     private void rbSolteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSolteroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbSolteroActionPerformed
@@ -409,3 +447,4 @@ public class VentanaAlta extends javax.swing.JFrame {
     private javax.swing.JTextField tfTelefono;
     // End of variables declaration//GEN-END:variables
 }
+

@@ -135,9 +135,13 @@ public class PracticaCuatro {
    
    public static void crearVentanaAlta(){
        
+       
+       operacion = "alta";
        vMenu.setVisible(false);
-       vAlta = new VentanaAlta();
+       vAlta = new VentanaAlta(operacion);
        vAlta.setVisible(true);
+       
+       
        
                
        
@@ -165,12 +169,30 @@ public class PracticaCuatro {
               for(int y = 0; aDepartamento.length > y; y++){
              combo2.addItem(aDepartamento[y].getNombre());
           
-//          no puedo añadir los objetos Departamento a el combobox de departamento (no se ven)
+//          no puedo añadir los objetos Departamento a el combobox de departamento (no se ven) ((ARREGLADO))
       }
       }
       
       public static void darAlta(String dni,String nss,String nombre, String apellido, String direccion, String telefono,
-              Character sexo, Character estadoCivil,JComboBox tipoContrato, JComboBox departamento,String fechaAlta, String numEmpleado) {
-        
+              Character sexo, Character estadoCivil,int tipoContrato,  int departamento,String fechaAlta, String numEmpleado) {
+ 
+          
+         oEmpleado = new Empleados();
+         oEmpleado.setDni(dni);
+         oEmpleado.setNss(nss);
+         oEmpleado.setNombre(nombre);
+         oEmpleado.setApellidos(apellido);
+         oEmpleado.setDireccion(direccion);
+         oEmpleado.setTelefno(telefono);
+         oEmpleado.setSexo(sexo);
+         oEmpleado.setEstadoCivil(estadoCivil);
+         oEmpleado.setC(aContrato[tipoContrato]);
+         oEmpleado.setD(aDepartamento[departamento]);
+         oEmpleado.setFechaAlta(fechaAlta);
+         oEmpleado.setNumeroEmpleado(numEmpleado);
+                 
     }
+      
+      
+     
 }

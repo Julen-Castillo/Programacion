@@ -126,6 +126,8 @@ public class Menu extends javax.swing.JFrame {
 
     private void miAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaActionPerformed
        PracticaCuatro.crearVentanaAlta();
+       
+       
     }//GEN-LAST:event_miAltaActionPerformed
 
     private void miContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miContratoActionPerformed
