@@ -87,16 +87,15 @@ public class PracticaCuatro {
         
        aEmpleado = new ArrayList<Empleados>();
        
-       oEmpleado = new Empleados("12345678F","11111111","Julen","Castillo","C/Arrabal N5","666666666",'M','S',"05/02/2019","10",
+       oEmpleado = new Empleados("12345678F","11111111","Julen","Castillo","C/Arrabal N5","666666666",'M','S',"05/02/2019","0001",
                aContrato[0],aDepartamento[0],lPersonal.get(0));
        aEmpleado.add(oEmpleado);
 
        
-        
+  
    
   /*  crear usuario administrador */
     
- 
         lPersonal = new ArrayList<Personal>();
     
     administrador = new Personal();
@@ -133,10 +132,10 @@ public class PracticaCuatro {
    }
    }
    
-   public static void crearVentanaAlta(){
+   public static void crearVentanaPersona(String operacion){
        
        
-       operacion = "alta";
+      
        vMenu.setVisible(false);
        vAlta = new VentanaAlta(operacion);
        vAlta.setVisible(true);
@@ -170,7 +169,6 @@ public class PracticaCuatro {
       }
       
       public static void darAlta(String dni,String nss,String nombre, String apellido, String direccion, String telefono,
-<<<<<<< Updated upstream
               Character sexo, Character estadoCivil,int tipoContrato,  int departamento,String fechaAlta, String numEmpleado) {
  
           
@@ -187,13 +185,40 @@ public class PracticaCuatro {
          oEmpleado.setD(aDepartamento[departamento]);
          oEmpleado.setFechaAlta(fechaAlta);
          oEmpleado.setNumeroEmpleado(numEmpleado);
+         
+           aEmpleado.add(oEmpleado);
                  
-=======
-              Character sexo, Character estadoCivil,String tipoContrato, String departamento,String fechaAlta, String numEmpleado) {
-        
->>>>>>> Stashed changes
+
     }
       
+      public static void modificarDatos(String nombre, String apellido, String direccion, String telefono,Character sexo, Character estadoCivil, int tipoContrato, int departamento, String numEmpleado ){
+          
+      }
+
       
-     
+      public static boolean buscarEmpleado(){
+          
+       
+          int x;
+          
+             String numero =  JOptionPane.showInputDialog(null,"Escribe tu numero de Empleado");
+             
+             for ( x = 0; x < aEmpleado.size() && aEmpleado.get(x).getNumeroEmpleado().equals(numero) == false; x++){}
+                  
+               
+            if (x == aEmpleado.size())
+                return false;
+                     
+                oEmpleado = aEmpleado.get(x);
+                return true;
+                     
+
+      
+      }
+      
+   
+   
+       
 }
+
+

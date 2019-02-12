@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
 import practicacuatro.PracticaCuatro;
 
 /**
@@ -63,6 +64,11 @@ public class Menu extends javax.swing.JFrame {
         mListado.add(miAlta);
 
         miModificacion.setText("Modificacion");
+        miModificacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miModificacionActionPerformed(evt);
+            }
+        });
         mListado.add(miModificacion);
 
         miBaja.setText("Baja");
@@ -125,7 +131,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaActionPerformed
-       PracticaCuatro.crearVentanaAlta();
+       PracticaCuatro.crearVentanaPersona("alta");
        
        
     }//GEN-LAST:event_miAltaActionPerformed
@@ -137,6 +143,18 @@ public class Menu extends javax.swing.JFrame {
     private void miDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miDepartamentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_miDepartamentoActionPerformed
+
+    private void miModificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miModificacionActionPerformed
+       if (PracticaCuatro.buscarEmpleado()){
+ 
+        PracticaCuatro.crearVentanaPersona("modificacion");
+       }
+       
+       else {
+           JOptionPane.showMessageDialog(null, "No existe");
+       }
+       
+    }//GEN-LAST:event_miModificacionActionPerformed
 
     /**
      * @param args the command line arguments

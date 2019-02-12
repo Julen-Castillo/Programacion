@@ -1,6 +1,7 @@
 
 package Vista;
 
+import javax.swing.JOptionPane;
 import practicacuatro.PracticaCuatro;
 
 /**
@@ -9,24 +10,47 @@ import practicacuatro.PracticaCuatro;
  */
 public class VentanaAlta extends javax.swing.JFrame {
     
-<<<<<<< Updated upstream
+
 private String operacionActiva;
-=======
+
     //Planteamiento
     private String comboDepartamento;
     private String comboContrato;
->>>>>>> Stashed changes
 
- private int comboContrato;
- private int comboDepartamento;
+
+
  
     public VentanaAlta(String operacion) {
         initComponents();
         PracticaCuatro.llenarCombobox(cbTipoContrato);
         PracticaCuatro.llenarCombobox2(cbDepartamento);
            
-           String operacionActiva = operacion;
+         operacionActiva = operacion;
+         
+         if (operacionActiva.equals("modificacion")) {
+             
+             
+          
+             tfDni.setEnabled(false);
+             tfNss.setEnabled(false);
+             tfNombre.setEnabled(false);
+             tfApellidos.setEnabled(false);
+             tfTelefono.setEnabled(false);
+             tfDireccion.setEnabled(false);
+             rbHombre.setSelected(false);
+             rbMujer.setSelected(false);
+             rbCasado.setSelected(false);
+             rbSoltero.setSelected(false);
+             tfFecha.setEnabled(false);    
+         
+               
+               
+           }
     }
+           
+        
+
+            
 
     private VentanaAlta() {
        
@@ -312,43 +336,39 @@ private String operacionActiva;
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
  
-       
-        if (operacionActiva.contains("alta"))  
-                {
-      
-      Character Sexo;
-      Character  EstadoCivil;
+       Character Sexo;
+       Character  EstadoCivil;
         
-    if (rbHombre.isSelected()) {
+              if (rbHombre.isSelected()) {
         
-        Sexo = 'M';
-    }   
-    else {
+                       Sexo = 'M';
+                       }   
+                         else {
         
-        Sexo = 'F';
-    }
+                        Sexo = 'F';
+                       }
     
-    if(rbCasado.isSelected()) {
+                if(rbCasado.isSelected()) {
         
         
-        EstadoCivil = 'C';   
-    }
+                         EstadoCivil = 'C';   
+                       }
     
-    else {
+                         else {
         
-        EstadoCivil = 'S';
-    }
-<<<<<<< Updated upstream
-     comboContrato = cbTipoContrato.getSelectedIndex();
-     comboDepartamento = cbDepartamento.getSelectedIndex();
-  
+                         EstadoCivil = 'S';
+                       }
+                
+                
+    int comboContrato = cbTipoContrato.getSelectedIndex();
+    int comboDepartamento = cbDepartamento.getSelectedIndex();
+   
+    
+    if (operacionActiva.equals("alta")){
     
     PracticaCuatro.darAlta(tfDni.getText(),tfNss.getText(),tfNombre.getText(),tfApellidos.getText(),
             tfDireccion.getText(),tfTelefono.getText(),Sexo,EstadoCivil,
           comboContrato,comboDepartamento,tfFecha.getText(),tfNumEmpleado.getText());
-    
-    
- 
 
    tfDni.setText("");
    tfNss.setText("");
@@ -358,25 +378,20 @@ private String operacionActiva;
    tfTelefono.setText("");
    tfFecha.setText("");
    tfNumEmpleado.setText("");
-                }
    
+      }
     
-=======
-  //Planteamiento
-  
-   comboDepartamento = String.valueOf(cbDepartamento.getSelectedItem());
-   comboContrato = String.valueOf(cbTipoContrato.getSelectedItem());
-   
-    
-   PracticaCuatro.darAlta(tfDni.getText(),tfNss.getText(),tfNombre.getText(),tfApellidos.getText(),
-           tfDireccion.getText(),tfTelefono.getText(),Sexo,EstadoCivil,
-           comboContrato,comboDepartamento,tfFecha.getText(),tfNumEmpleado.getText());
-   
-   
-   
->>>>>>> Stashed changes
- 
-//     No puedo pasar los combobox a string 
+    else {
+        
+        if(operacionActiva.equals("modificacion"))
+        {
+         
+             
+             PracticaCuatro.modificarDatos(tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText(),tfTelefono.getText(),Sexo,EstadoCivil,comboContrato,comboDepartamento,tfNumEmpleado.getText());
+            
+            
+        }
+    }
     }//GEN-LAST:event_bAceptarActionPerformed
 
     
