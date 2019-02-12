@@ -9,7 +9,13 @@ import practicacuatro.PracticaCuatro;
  */
 public class VentanaAlta extends javax.swing.JFrame {
     
+<<<<<<< Updated upstream
 private String operacionActiva;
+=======
+    //Planteamiento
+    private String comboDepartamento;
+    private String comboContrato;
+>>>>>>> Stashed changes
 
  private int comboContrato;
  private int comboDepartamento;
@@ -25,6 +31,8 @@ private String operacionActiva;
     private VentanaAlta() {
        
     }
+    
+    
 
 
     @SuppressWarnings("unchecked")
@@ -182,6 +190,17 @@ private String operacionActiva;
                                     .addGap(18, 18, 18)
                                     .addComponent(tfApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bAceptar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bCancelar))
+                            .addComponent(tfNumEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(357, 357, 357))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel10)
@@ -214,18 +233,7 @@ private String operacionActiva;
                                 .addGap(46, 46, 46)
                                 .addComponent(tfFecha)
                                 .addGap(27, 27, 27)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(bAceptar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bCancelar))
-                            .addComponent(tfNumEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(357, 357, 357))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,6 +338,7 @@ private String operacionActiva;
         
         EstadoCivil = 'S';
     }
+<<<<<<< Updated upstream
      comboContrato = cbTipoContrato.getSelectedIndex();
      comboDepartamento = cbDepartamento.getSelectedIndex();
   
@@ -352,6 +361,20 @@ private String operacionActiva;
                 }
    
     
+=======
+  //Planteamiento
+  
+   comboDepartamento = String.valueOf(cbDepartamento.getSelectedItem());
+   comboContrato = String.valueOf(cbTipoContrato.getSelectedItem());
+   
+    
+   PracticaCuatro.darAlta(tfDni.getText(),tfNss.getText(),tfNombre.getText(),tfApellidos.getText(),
+           tfDireccion.getText(),tfTelefono.getText(),Sexo,EstadoCivil,
+           comboContrato,comboDepartamento,tfFecha.getText(),tfNumEmpleado.getText());
+   
+   
+   
+>>>>>>> Stashed changes
  
 //     No puedo pasar los combobox a string 
     }//GEN-LAST:event_bAceptarActionPerformed

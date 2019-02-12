@@ -148,32 +148,29 @@ public class PracticaCuatro {
    }
    
       public static void  llenarCombobox(JComboBox combo){
-         
-           
-	
           for(int x = 0; aContrato.length > x; x++){
-          
                 combo.addItem(aContrato[x].getDescripcion());
+                
+                combo.setSelectedItem(-1);
                	
           }
           
-//          
-//      
-//          }
-//            
+         
     
    }
       public static void llenarCombobox2(JComboBox combo2){
-          
-          
-              for(int y = 0; aDepartamento.length > y; y++){
+          combo2.removeAllItems();
+          for(int y = 0; aDepartamento.length > y; y++){
              combo2.addItem(aDepartamento[y].getNombre());
+             
+                          combo2.setSelectedItem(-1);
           
 //          no puedo añadir los objetos Departamento a el combobox de departamento (no se ven) ((ARREGLADO))
       }
       }
       
       public static void darAlta(String dni,String nss,String nombre, String apellido, String direccion, String telefono,
+<<<<<<< Updated upstream
               Character sexo, Character estadoCivil,int tipoContrato,  int departamento,String fechaAlta, String numEmpleado) {
  
           
@@ -191,6 +188,10 @@ public class PracticaCuatro {
          oEmpleado.setFechaAlta(fechaAlta);
          oEmpleado.setNumeroEmpleado(numEmpleado);
                  
+=======
+              Character sexo, Character estadoCivil,String tipoContrato, String departamento,String fechaAlta, String numEmpleado) {
+        
+>>>>>>> Stashed changes
     }
       
       
