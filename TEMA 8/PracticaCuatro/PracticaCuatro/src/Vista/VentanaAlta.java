@@ -29,12 +29,9 @@ private String operacionActiva;
          
          if (operacionActiva.equals("modificacion")) {
              
-             
-          
+ 
              tfDni.setEnabled(false);
              tfNss.setEnabled(false);
-             tfNombre.setEnabled(false);
-             tfApellidos.setEnabled(false);
              tfTelefono.setEnabled(false);
              tfDireccion.setEnabled(false);
              rbHombre.setSelected(false);
@@ -42,10 +39,14 @@ private String operacionActiva;
              rbCasado.setSelected(false);
              rbSoltero.setSelected(false);
              tfFecha.setEnabled(false);    
-         
-               
-               
+    
            }
+         else {
+              if (operacionActiva.equals("alta")) {
+                  
+                  
+              }
+         }
     }
            
         
@@ -387,7 +388,7 @@ private String operacionActiva;
         {
          
              
-             PracticaCuatro.modificarDatos(tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText(),tfTelefono.getText(),Sexo,EstadoCivil,comboContrato,comboDepartamento,tfNumEmpleado.getText());
+             PracticaCuatro.modificarDatos(tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText(),tfTelefono.getText(),Sexo,EstadoCivil,comboContrato,comboDepartamento);
             
             
         }

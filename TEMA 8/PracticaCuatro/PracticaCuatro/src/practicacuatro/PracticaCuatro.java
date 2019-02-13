@@ -191,7 +191,11 @@ public class PracticaCuatro {
 
     }
       
-      public static void modificarDatos(String nombre, String apellido, String direccion, String telefono,Character sexo, Character estadoCivil, int tipoContrato, int departamento, String numEmpleado ){
+      public static void modificarDatos(String nombre, String apellido, String direccion, String telefono,Character sexo, Character estadoCivil, int tipoContrato, int departamento){
+          
+          int x;
+       
+          
           
       }
 
@@ -208,17 +212,27 @@ public class PracticaCuatro {
                
             if (x == aEmpleado.size())
                 return false;
+            
                      
-                oEmpleado = aEmpleado.get(x);
+              else  oEmpleado = aEmpleado.get(x);
                 return true;
-                     
-
+                
+                
+             
+        
+            }
+            
       
-      }
+                     
+                          
+}
+      
+      
+      
       
    
    
        
-}
+
 
 
