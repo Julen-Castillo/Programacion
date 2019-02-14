@@ -145,7 +145,10 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_miDepartamentoActionPerformed
 
     private void miModificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miModificacionActionPerformed
-       if (PracticaCuatro.buscarEmpleado()){
+      
+            String numero =  JOptionPane.showInputDialog(null,"Escribe tu numero de Empleado");
+        
+        if (PracticaCuatro.buscarEmpleado(numero)){
  
         PracticaCuatro.crearVentanaPersona("modificacion");
        }

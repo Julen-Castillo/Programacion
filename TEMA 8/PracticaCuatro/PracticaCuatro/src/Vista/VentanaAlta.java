@@ -1,6 +1,8 @@
 
 package Vista;
 
+import Clases.Contrato;
+import Clases.Departamento;
 import javax.swing.JOptionPane;
 import practicacuatro.PracticaCuatro;
 
@@ -390,18 +392,21 @@ private String operacionActiva;
              
              PracticaCuatro.modificarDatos(tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText(),tfTelefono.getText(),Sexo,EstadoCivil,comboContrato,comboDepartamento);
             
-            
+
         }
     }
+    
+    
+   
     }//GEN-LAST:event_bAceptarActionPerformed
 
+   
     
+     public  void llenarDatosModificacion(String dni, String nss, String nombre, String apellido,String direccion,String telefono, char sexo, char estadocivil,String contrato, String departamento, String fecha, String numEmple){
+        
+        tfDni.setText(dni);
+    }
 
-        
-        
-        
-    
-    
     
     
     private void rbSolteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSolteroActionPerformed
@@ -486,4 +491,5 @@ private String operacionActiva;
     private javax.swing.JTextField tfTelefono;
     // End of variables declaration//GEN-END:variables
 }
+
 

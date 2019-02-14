@@ -20,6 +20,7 @@ public class PracticaCuatro {
     private static Contrato aContrato[];
     private static ArrayList<Personal> lPersonal;
     private static Personal administrador;
+    private static int posicionNum;
    
     private static ArrayList<Empleados> aEmpleado;
     
@@ -200,31 +201,42 @@ public class PracticaCuatro {
       }
 
       
-      public static boolean buscarEmpleado(){
+      public static boolean buscarEmpleado(String numero){
+
           
-       
-          int x;
-          
-             String numero =  JOptionPane.showInputDialog(null,"Escribe tu numero de Empleado");
-             
+             int x;          
              for ( x = 0; x < aEmpleado.size() && aEmpleado.get(x).getNumeroEmpleado().equals(numero) == false; x++){}
-                  
-               
+
+             
             if (x == aEmpleado.size())
                 return false;
+         
             
                      
-              else  oEmpleado = aEmpleado.get(x);
-                return true;
-                
-                
-             
-        
-            }
+              else  oEmpleado = aEmpleado.get(x);   
             
-      
-                     
-                          
+          
+              posicionNum = x ;
+              
+                String dni = aEmpleado.get(posicionNum).getDni();
+                String nss = aEmpleado.get(posicionNum).getNss();
+                String nombre = aEmpleado.get(posicionNum).getNombre();
+                String apellido = aEmpleado.get(posicionNum).getApellidos();
+                String direccion = aEmpleado.get(posicionNum).getDireccion();
+                String telefono = aEmpleado.get(posicionNum).getTelefno();
+                char sexo = aEmpleado.get(posicionNum).getSexo();
+                char estadocivil = aEmpleado.get(posicionNum).getEstadoCivil();
+                String contrato = aEmpleado.get(posicionNum).getC().getDescripcion();
+                String departamento = aEmpleado.get(posicionNum).getD().getNombre();
+                String fecha = aEmpleado.get(posicionNum).getFechaAlta();
+                String numEmple = aEmpleado.get(posicionNum).getNumeroEmpleado();  
+                
+           vAlta.llenarDatosModificacion(dni,nss,nombre,apellido,direccion,telefono,sexo,estadocivil,contrato,departamento,fecha,numEmple);
+          
+                 return true; 
+                         
+    }
+                    
 }
       
       
