@@ -93,7 +93,7 @@ public class PracticaCuatro {
        aEmpleado.add(oEmpleado);
 
        
-  
+         
    
   /*  crear usuario administrador */
     
@@ -192,12 +192,18 @@ public class PracticaCuatro {
 
     }
       
-      public static void modificarDatos(String nombre, String apellido, String direccion, String telefono,Character sexo, Character estadoCivil, int tipoContrato, int departamento){
-          
-          int x;
-       
+      public static void modificarDatos(String nombre, String apellido, String direccion, String telefono,Character sexo, Character estadoCivil, int tipoContrato, int departamento, String fecha){
           
           
+                oEmpleado.setNombre(nombre);   
+                oEmpleado.setApellidos(apellido);   
+                oEmpleado.setSexo(sexo);   
+                oEmpleado.setEstadoCivil(estadoCivil);   
+                oEmpleado.setC(aContrato[tipoContrato]);
+                oEmpleado.setD(aDepartamento[departamento]);
+                oEmpleado.setFechaAlta(fecha);
+                
+      
       }
 
       
@@ -216,7 +222,7 @@ public class PracticaCuatro {
               else  oEmpleado = aEmpleado.get(x);   
             
           
-              posicionNum = x ;
+                 posicionNum = x ;
               
                 String dni = aEmpleado.get(posicionNum).getDni();
                 String nss = aEmpleado.get(posicionNum).getNss();
@@ -236,6 +242,14 @@ public class PracticaCuatro {
                  return true; 
                          
     }
+      
+           public static void  volverMenu(){
+    
+               vAlta.setVisible(false);
+               vMenu.setVisible(true);
+    
+    
+}
                     
 }
       
