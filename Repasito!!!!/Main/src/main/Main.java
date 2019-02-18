@@ -54,7 +54,7 @@ public class Main {
     
     public static void llenarDatos(){
         
-           aPuestos = new Puesto[4];
+           aPuestos = new Puesto[5];
            
            aPuestos[0] = new Puesto();
            aPuestos[0].setNombrePuesto("Delantero");
@@ -64,24 +64,23 @@ public class Main {
            aPuestos[2].setNombrePuesto("Defensa");
            aPuestos[3] = new Puesto();
            aPuestos[3].setNombrePuesto("Portero");
+         
         
           
      
     }
     public static void darAlta(String nombreEquipo, String escudo, String nombreJugador, int comboPuestos, String dorsal){
-        
-        
+
         // Crear objeto Equipo y meterle los valores
         equipo = new Equipo();
         equipo.setNombreEquipo(nombreEquipo);
         equipo.setEscudo(escudo);
+        
         equipo.setlJugadores(listaJugadores);
-        
-        
+
         //Crear arraylist de equipos y meter el objeto equipo
         listaEquipos = new ArrayList<Equipo>();
-        listaEquipos.add(equipo);
-        
+        listaEquipos.add(equipo);       
         
         //crear el objeto Jugador y meterle los valores
         
@@ -95,6 +94,8 @@ public class Main {
         //Crear arraylist de jugadores y meter el objeto jugador 
          listaJugadores = new ArrayList<Jugador>();  
          listaJugadores.add(jugador);
+        
+        
         
         
     }
@@ -116,6 +117,7 @@ public class Main {
         jugador.setDorsal(dorsal);
         
         
+        listaJugadores.add(jugador);
     }
 
 

@@ -29,7 +29,7 @@
                   <Component id="bMasJugadores" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -40,22 +40,25 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="bAceptar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="bSalir" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfFecha" pref="287" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                      <Component id="bAceptar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="bSalir" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="tfNombreEquipo" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="cbPuesto" min="-2" pref="147" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="tfDorsal" min="-2" pref="50" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="tfNombreJugador" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                                  <Component id="tfEscudo" alignment="0" pref="287" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="tfNombreEquipo" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="cbPuesto" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="tfDorsal" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="tfNombreJugador" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
-                              <Component id="tfEscudo" alignment="0" pref="287" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
                       </Group>
@@ -78,7 +81,9 @@
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tfEscudo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="tfFecha" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -187,6 +192,8 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="tfEscudo">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfFecha">
     </Component>
   </SubComponents>
 </Form>

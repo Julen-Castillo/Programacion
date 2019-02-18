@@ -112,11 +112,11 @@ public class PracticaCuatro {
    
    public static void comprobarUsuario(String Usuario, String Contraseña){
        
-       boolean check = false;
+      
 
      
        if(Usuario.equals(administrador.getUsuario())&& Contraseña.equals(administrador.getContraseña())){           
-            check = true;
+         
             v.setVisible(false);
             vMenu = new Menu();
             vMenu.setVisible(true);       

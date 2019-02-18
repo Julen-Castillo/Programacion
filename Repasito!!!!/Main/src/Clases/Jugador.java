@@ -8,7 +8,9 @@ public class Jugador {
     private String nombreJugador;
     private String dorsal;
     private Equipo equipoJugador;
-
+    private Puesto p;
+    
+    
     public Jugador(String nombreJugador, String dorsal, Equipo equipoJugador, Puesto p) {
         this.nombreJugador = nombreJugador;
         this.dorsal = dorsal;
@@ -66,15 +68,17 @@ public class Jugador {
         
     }
 
-    @Override
-    public String toString() {
-        return "Jugador{" + "nombreJugador=" + nombreJugador + ", dorsal=" + dorsal + ", equipoJugador=" + equipoJugador + ", p=" + p + '}';
-    }
+   
       
       
       
    //Relacion   
-    private Puesto p;
+
+    @Override
+    public String toString() {
+        return "/n" + "Nombre{" + "nombreJugador: " + nombreJugador + "|  dorsal: " + dorsal + "| equipoJugador: " + equipoJugador + "| p=" + p + '}';
+    }
+   
   
     
     
