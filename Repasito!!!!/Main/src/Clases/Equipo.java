@@ -1,12 +1,29 @@
 
 package Clases;
 
+import java.util.ArrayList;
+
 
 public class Equipo {
     
     
   private String nombreEquipo;
   private String escudo;
+  private ArrayList<Jugador> lJugadores;
+
+    public Equipo(String nombreEquipo, String escudo, ArrayList<Jugador> lJugadores) {
+        this.nombreEquipo = nombreEquipo;
+        this.escudo = escudo;
+        this.lJugadores = lJugadores;
+    }
+
+    public ArrayList<Jugador> getlJugadores() {
+        return lJugadores;
+    }
+
+    public void setlJugadores(ArrayList<Jugador> lJugadores) {
+        this.lJugadores = lJugadores;
+    }
 
 
     public Equipo(String nombreEquipo, String escudo) {
@@ -33,6 +50,11 @@ public class Equipo {
 
     public void setNombreEquipo(String nombreEquipo) {
         this.nombreEquipo = nombreEquipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipo{" + "nombreEquipo=" + nombreEquipo + ", escudo=" + escudo + ", lJugadores=" + lJugadores + '}';
     }
 
 

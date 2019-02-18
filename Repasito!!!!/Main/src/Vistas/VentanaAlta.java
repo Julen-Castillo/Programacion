@@ -7,6 +7,8 @@ package Vistas;
 
 import Excepciones.CampoVacio;
 import Excepciones.ExceptionGenerica;
+import Excepciones.ExceptionNumerica;
+import java.awt.Color;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -37,12 +39,71 @@ public class VentanaAlta extends javax.swing.JFrame {
         
     }
     
- public void validarNombre()throws Exception{
-     
-     if(tfNombreEquipo.getText().isEmpty())
-         throw new CampoVacio();
+ public void validarNombreEquipo()throws Exception{
+       int comboPuestos;
+  
+            if (tfNombreEquipo.getText().isEmpty()){
+               throw new CampoVacio(); 
+            }           
+            else {    
+              Pattern pat = Pattern.compile("^[A-Z][a-z]{1,}");
+              Matcher mat = pat.matcher(tfNombreEquipo.getText());
+   
+                 if (mat.matches()==false) {
+                 throw new ExceptionGenerica();
+
+        }      
+           
+            }
            
  }
+ public void  validarEscudo() throws Exception{
+  
+     if (tfEscudo.getText().isEmpty()){
+            throw new CampoVacio();
+            
+     }
+     else {
+          Pattern pat = Pattern.compile("^[A-Z][a-z]{1,}");
+          Matcher mat = pat.matcher(tfEscudo.getText());
+   
+                 if (mat.matches()==false) {
+                 throw new ExceptionGenerica();
+     }
+ }
+ }
+   public void  validarNombreJugador() throws Exception{
+      if(tfNombreJugador.getText().isEmpty()) {
+          throw new CampoVacio();
+      }
+       else {
+          Pattern pat = Pattern.compile("^[A-Z][a-z]{1,}");
+          Matcher mat = pat.matcher(tfNombreJugador.getText());
+   
+                 if (mat.matches()==false) {
+                 throw new ExceptionGenerica();
+      
+   }
+      }
+   }
+   
+   public void validarDorsal() throws Exception {
+       if(tfDorsal.getText().isEmpty()){
+           throw new CampoVacio();
+           
+       }
+       else {
+           Pattern pat = Pattern.compile("^[1-9]$");
+          Matcher mat = pat.matcher(tfDorsal.getText());
+   
+                 if (mat.matches()==false) {
+                 throw new ExceptionNumerica();
+           
+       }
+   }
+   }
+ 
+ 
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -210,59 +271,72 @@ public class VentanaAlta extends javax.swing.JFrame {
     }//GEN-LAST:event_tfDorsalActionPerformed
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
-        int comboPuestos;
+      
 
  
         
         try {
-           
-           
-           
-         
-            if (tfNombreEquipo.getText().isEmpty()){
-               throw new CampoVacio(); 
-            }           
-            else {    
-              Pattern pat = Pattern.compile("^[A-Z][a-z]{1,}");
-              Matcher mat = pat.matcher(tfNombreEquipo.getText());
-   
-                 if (mat.matches()==false) {
-                 throw new ExceptionGenerica();
 
-        }      
-                 
-            else {
+       validarNombreEquipo();
+       validarEscudo();
+       validarNombreJugador();
+       validarDorsal();
+       
+       int comboPuestos;
+
             comboPuestos = cbPuesto.getSelectedIndex();
             Main.darAlta(tfNombreEquipo.getText(),tfEscudo.getText(),tfNombreJugador.getText(),comboPuestos,tfDorsal.getText());
-            vaciarCampos();     
-                     
-                 }
-            }
-            
-            
-
+            vaciarCampos();   
    
            
        }
        catch (CampoVacio e){
            JOptionPane.showMessageDialog(null, "Campo Obligatorio");
+                 tfNombreEquipo.setBackground(Color.YELLOW);
+                  tfNombreJugador.setBackground(Color.YELLOW);
+                  tfEscudo.setBackground(Color.YELLOW);      
+                 tfDorsal.setBackground(Color.YELLOW);
        }
        catch (ExceptionGenerica e){
            
              JOptionPane.showMessageDialog(null, "Error: La primera letra tiene que ser Mayuscula y el resto minusculas");
-           
+                  tfNombreEquipo.setBackground(Color.RED);
+                  tfNombreJugador.setBackground(Color.RED);
+                  tfEscudo.setBackground(Color.RED);
+       }
+        
+        catch (ExceptionNumerica e){
+            JOptionPane.showMessageDialog(null, "Error: Numeros del 1 al 9");
+            tfDorsal.setBackground(Color.RED);
+            
+        }
+       catch (Exception e){
+            JOptionPane.showMessageDialog(null, "ERROR DESCONOCIDO");
            
        }
-       
    
     }//GEN-LAST:event_bAceptarActionPerformed
 
     private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
-       Main.Salir();
+       
+        
+      JOptionPane.showMessageDialog(this,Main.mostrarDatos());
+        
+        Main.Salir();
     }//GEN-LAST:event_bSalirActionPerformed
 
     private void bMasJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMasJugadoresActionPerformed
-       
+    int comboPuestos;
+     comboPuestos = cbPuesto.getSelectedIndex();
+        
+        tfNombreEquipo.setEnabled(false);
+       tfEscudo.setEnabled(false);
+      /*  Main.darAltaJugadores(tfNombreJugador.getText(),comboPuestos, tfDorsal.getText());*/
+      
+      Main.darAlta(tfNombreEquipo.getText(),tfEscudo.getText(),tfNombreJugador.getText(),comboPuestos,tfDorsal.getText());
+       tfNombreJugador.setText("");
+       tfDorsal.setText("");
+       cbPuesto.setSelectedIndex(-1);
     }//GEN-LAST:event_bMasJugadoresActionPerformed
 
     /**

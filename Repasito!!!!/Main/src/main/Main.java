@@ -32,7 +32,7 @@ public class Main {
   
     public static void main(String[] args) {
         
-    llenarDatos();
+   llenarDatos();
    crearVentana();
   
  
@@ -75,6 +75,8 @@ public class Main {
         equipo = new Equipo();
         equipo.setNombreEquipo(nombreEquipo);
         equipo.setEscudo(escudo);
+        equipo.setlJugadores(listaJugadores);
+        
         
         //Crear arraylist de equipos y meter el objeto equipo
         listaEquipos = new ArrayList<Equipo>();
@@ -87,11 +89,12 @@ public class Main {
         jugador.setNombreJugador(nombreJugador);
         jugador.setPuesto(aPuestos[comboPuestos]);
         jugador.setDorsal(dorsal);
+        jugador.setEquipoJugador(equipo);
          
         
         //Crear arraylist de jugadores y meter el objeto jugador 
          listaJugadores = new ArrayList<Jugador>();  
-            listaJugadores.add(jugador);
+         listaJugadores.add(jugador);
         
         
     }
@@ -105,17 +108,23 @@ public class Main {
         
     }
     
-    public static void ComprobarNombre(String NombreEquipo) throws ExceptionGenerica{
-      
+    public static void darAltaJugadores(String nombre, int comboPuesto, String dorsal) {
+        
+        jugador = new Jugador();
+        jugador.setNombreJugador(nombre);
+        jugador.setPuesto(aPuestos[comboPuesto]);
+        jugador.setDorsal(dorsal);
         
         
-       
-     
     }
+
 
     public static void Salir() {
        
         System.exit(0);
+    }
+         public static String mostrarDatos(){
+        return listaEquipos.toString();
     }
 }
 

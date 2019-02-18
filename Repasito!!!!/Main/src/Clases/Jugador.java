@@ -7,6 +7,30 @@ public class Jugador {
     
     private String nombreJugador;
     private String dorsal;
+    private Equipo equipoJugador;
+
+    public Jugador(String nombreJugador, String dorsal, Equipo equipoJugador, Puesto p) {
+        this.nombreJugador = nombreJugador;
+        this.dorsal = dorsal;
+        this.equipoJugador = equipoJugador;
+        this.p = p;
+    }
+
+    public Equipo getEquipoJugador() {
+        return equipoJugador;
+    }
+
+    public void setEquipoJugador(Equipo equipoJugador) {
+        this.equipoJugador = equipoJugador;
+    }
+
+    public Puesto getP() {
+        return p;
+    }
+
+    public void setP(Puesto p) {
+        this.p = p;
+    }
 
     public String getNombreJugador() {
         return nombreJugador;
@@ -39,6 +63,12 @@ public class Jugador {
         this.nombreJugador = nombreJugador;
         this.dorsal = dorsal;
         this.p = puesto;
+        
+    }
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "nombreJugador=" + nombreJugador + ", dorsal=" + dorsal + ", equipoJugador=" + equipoJugador + ", p=" + p + '}';
     }
       
       
