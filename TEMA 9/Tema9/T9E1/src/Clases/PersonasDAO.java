@@ -56,13 +56,12 @@ public class PersonasDAO {
        ResultSet resultado = ps.executeQuery();
        if (resultado.next()){
            //hay datos
-           return resultado.getString("nombre") + " " + resultado.getInt("edad");
+           return resultado.getString("nombre") + " " + resultado.getInt("edad") + resultado.getString("profesion") + resultado.getInt("telefono");
        }
        else {
                 //cero filas seleccionadas
                    return "No hay datos";
                }
-          
         }
         
         catch (Exception e){

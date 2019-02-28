@@ -6,6 +6,7 @@
 package Vista;
 
 import com.sun.prism.shader.AlphaTextureDifference_RadialGradient_Loader;
+import javax.swing.JOptionPane;
 import t9e1.T9E1;
 
 /**
@@ -14,9 +15,8 @@ import t9e1.T9E1;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaPrincipal
-     */
+    public String operacion;
+     
     public VentanaPrincipal() {
         initComponents();
     }
@@ -110,7 +110,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
-       T9E1.crearVentana2();
+    
+     operacion = tfOpcion.getText();
+    
+    switch(operacion){
+        
+        
+        
+        case "1":
+            T9E1.crearVentana2(operacion);
+           
+            break;
+            case "2":
+             T9E1.crearVentana2(operacion);
+            break;
+            case "3":
+            JOptionPane.showMessageDialog(null, "ATUN");
+            break;
+    }
+        
+        
+      
+      
+        
+        
     }//GEN-LAST:event_bAceptarActionPerformed
 
     /**

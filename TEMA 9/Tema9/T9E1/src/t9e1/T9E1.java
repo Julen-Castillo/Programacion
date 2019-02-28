@@ -62,9 +62,11 @@ private static BaseDatos bd;
         
     }
     
-    public static void crearVentana2(){
-       v2 = new VentanaAlta();
+    public static void crearVentana2(String operacion){
+        String operacionActivita = operacion;
+       v2 = new VentanaAlta(operacionActivita);
        v2.setVisible(true);
+       v.setVisible(false);
     
 }
     public static String consultar(String nombre){

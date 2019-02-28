@@ -1,0 +1,20 @@
+2019-02-28 23:28:34 5188 [Note] Plugin 'FEDERATED' is disabled.
+2019-02-28 23:28:34 5188 [Note] InnoDB: The InnoDB memory heap is disabled
+2019-02-28 23:28:34 5188 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2019-02-28 23:28:34 5188 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2019-02-28 23:28:34 5188 [Note] InnoDB: Not using CPU crc32 instructions
+2019-02-28 23:28:34 5188 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+2019-02-28 23:28:34 5188 [Note] InnoDB: Completed initialization of buffer pool
+2019-02-28 23:28:34 5188 [Note] InnoDB: Setting log file C:\Users\Julen\Desktop\Progra\Programacion\USBWEBSERVER\mysql\data\ib_logfile101 size to 5 MB
+2019-02-28 23:28:34 5188 [Note] InnoDB: Setting log file C:\Users\Julen\Desktop\Progra\Programacion\USBWEBSERVER\mysql\data\ib_logfile1 size to 5 MB
+2019-02-28 23:28:35 5188 [Note] InnoDB: Renaming log file C:\Users\Julen\Desktop\Progra\Programacion\USBWEBSERVER\mysql\data\ib_logfile101 to C:\Users\Julen\Desktop\Progra\Programacion\USBWEBSERVER\mysql\data\ib_logfile0
+2019-02-28 23:28:35 5188 [Warning] InnoDB: New log files created, LSN=1626134
+2019-02-28 23:28:35 5188 [Note] InnoDB: Highest supported file format is Barracuda.
+2019-02-28 23:28:35 5188 [Note] InnoDB: 128 rollback segment(s) are active.
+2019-02-28 23:28:35 5188 [Note] InnoDB: Waiting for purge to start
+2019-02-28 23:28:35 5188 [Note] InnoDB: 5.6.13 started; log sequence number 1626636
+2019-02-28 23:28:35 5188 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 2fc21c6c-3ba8-11e9-a7de-7a791949c121.
+2019-02-28 23:28:35 5188 [Note] Server hostname (bind-address): '*'; port: 3307
+2019-02-28 23:28:35 5188 [Note] IPv6 is available.
+2019-02-28 23:28:35 5188 [Note]   - '::' resolves to '::';
+2019-02-28 23:28:35 5188 [Note] Server socket created on IP: '::'.
