@@ -8,6 +8,7 @@ import Vista.VentanaAlta;
 import Vista.VentanaPrincipal;
 import java.sql.Connection;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 
 public class T9E1 {
@@ -17,6 +18,7 @@ private static VentanaPrincipal v;
 private static PersonasDAO oPersonaDAO;
 private static VentanaAlta v2;
 private static BaseDatos bd;
+private static Persona p;
 
 
     public static void main(String[] args) {
@@ -54,7 +56,7 @@ private static BaseDatos bd;
     
     public static void darAlta(String nombre,Integer edad, String profesion, Integer telefono){
         
-        Persona p = new Persona(nombre,edad,profesion,telefono);
+        p = new Persona(nombre,edad,profesion,telefono);
         
         //insertar en la base de datos (en la tabla personas)
         
@@ -71,13 +73,40 @@ private static BaseDatos bd;
 }
     public static String consultar(String nombre){
       
-        return oPersonaDAO.consultar(nombre);
-        
+       p = oPersonaDAO.consultar(nombre);
+  
+       return p.getNombre();
+ 
+    }
+    public static Integer mostrarEdad(){
+        return p.getEdad();
     }
 
+    public static String mostrarProfesion(){   
+        return p.getProfesion();
+    }
+    
+    public static Integer mostrarTelefono(){
+        
+        return p.getTelefono();
+    }
+  
+    public static void mostrarPersonas(){
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     public static void Salir() throws SQLException {
         
         bd.cerrar();
         System.exit(0);
-    }
+    }  
+    
 }

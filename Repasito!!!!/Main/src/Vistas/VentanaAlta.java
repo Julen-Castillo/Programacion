@@ -9,6 +9,8 @@ import Excepciones.CampoVacio;
 import Excepciones.ExceptionGenerica;
 import Excepciones.ExceptionNumerica;
 import java.awt.Color;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -40,7 +42,7 @@ public class VentanaAlta extends javax.swing.JFrame {
     }
     
  public void validarNombreEquipo()throws Exception{
-       int comboPuestos;
+      
   
             if (tfNombreEquipo.getText().isEmpty()){
                throw new CampoVacio(); 
@@ -123,6 +125,7 @@ public class VentanaAlta extends javax.swing.JFrame {
         bSalir = new javax.swing.JButton();
         tfDorsal = new javax.swing.JTextField();
         tfEscudo = new javax.swing.JTextField();
+        tfFecha = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -193,7 +196,7 @@ public class VentanaAlta extends javax.swing.JFrame {
                     .addComponent(bMasJugadores)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel3)
-                        .addGroup(layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel1)
@@ -202,21 +205,22 @@ public class VentanaAlta extends javax.swing.JFrame {
                                     .addComponent(jLabel4)))
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(74, 74, 74)
-                                    .addComponent(bAceptar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(bSalir))
-                                .addComponent(tfNombreEquipo)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(tfFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(74, 74, 74)
+                                        .addComponent(bAceptar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(bSalir))
+                                    .addComponent(tfNombreEquipo)
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(cbPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(tfDorsal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(tfNombreJugador, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(tfEscudo, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
+                                    .addComponent(tfNombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfEscudo, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)))
                             .addGap(0, 17, Short.MAX_VALUE))))
                 .addGap(66, 66, 66))
         );
@@ -231,7 +235,9 @@ public class VentanaAlta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(tfEscudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -283,6 +289,10 @@ public class VentanaAlta extends javax.swing.JFrame {
        validarDorsal();
        
        int comboPuestos;
+            DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate fechaAlta = LocalDate.parse(tfFecha.getText(), f);
+       
+        
 
             comboPuestos = cbPuesto.getSelectedIndex();
             Main.darAlta(tfNombreEquipo.getText(),tfEscudo.getText(),tfNombreJugador.getText(),comboPuestos,tfDorsal.getText());
@@ -328,6 +338,7 @@ public class VentanaAlta extends javax.swing.JFrame {
     private void bMasJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMasJugadoresActionPerformed
     int comboPuestos;
      comboPuestos = cbPuesto.getSelectedIndex();
+   
         
         tfNombreEquipo.setEnabled(false);
        tfEscudo.setEnabled(false);
@@ -387,6 +398,7 @@ public class VentanaAlta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField tfDorsal;
     private javax.swing.JTextField tfEscudo;
+    private javax.swing.JTextField tfFecha;
     private javax.swing.JTextField tfNombreEquipo;
     private javax.swing.JTextField tfNombreJugador;
     // End of variables declaration//GEN-END:variables

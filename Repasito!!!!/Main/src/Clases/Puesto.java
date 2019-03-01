@@ -31,6 +31,8 @@ public class Puesto {
         this.lJugadores = lJugadores;
     }
 
+    
+
     public Puesto() {
     }
     

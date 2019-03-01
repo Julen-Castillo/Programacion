@@ -2,10 +2,12 @@
 package Clases;
 
 import java.sql.*;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class BaseDatos {
   private  Connection con;
+  private ArrayList<Persona> listaPersonas;
    
     
     public Connection conectar(){

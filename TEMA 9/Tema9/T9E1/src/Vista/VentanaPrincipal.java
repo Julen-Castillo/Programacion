@@ -59,6 +59,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 bAceptarActionPerformed(evt);
             }
         });
+        bAceptar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                bAceptarKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,7 +122,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         
         
-        case "1":
+            case "1":
             T9E1.crearVentana2(operacion);
            
             break;
@@ -125,8 +130,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
              T9E1.crearVentana2(operacion);
             break;
             case "3":
-            JOptionPane.showMessageDialog(null, "ATUN");
+              T9E1.mostrarPersonas();
+           
             break;
+            case "4":
+                try {
+                T9E1.Salir();
+                }
+                catch(Exception e){
+                    
+                }
+            break;
+            
     }
         
         
@@ -135,6 +150,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_bAceptarActionPerformed
+
+    private void bAceptarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bAceptarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bAceptarKeyPressed
 
     /**
      * @param args the command line arguments

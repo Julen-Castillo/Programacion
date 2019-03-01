@@ -7,6 +7,9 @@ import java.sql.*;
 public class PersonasDAO {
     
     private Connection con;
+    private Persona persona;
+    public PersonasDAO() {
+    }
 
     
     public PersonasDAO(Connection con) {
@@ -45,7 +48,7 @@ public class PersonasDAO {
     
     }
     
-    public String consultar(String nombre){
+    public Persona consultar(String nombre ){
         
         try {
         
@@ -54,13 +57,23 @@ public class PersonasDAO {
        PreparedStatement ps = con.prepareStatement(plantilla);
        ps.setString(1, nombre);
        ResultSet resultado = ps.executeQuery();
+   
+       
        if (resultado.next()){
            //hay datos
-           return resultado.getString("nombre") + " " + resultado.getInt("edad") + resultado.getString("profesion") + resultado.getInt("telefono");
+           persona = new Persona();
+           persona.setNombre(resultado.getString("nombre"));
+           persona.setEdad(resultado.getInt("edad"));
+           persona.setProfesion(resultado.getString("profesion"));
+           persona.setTelefono(resultado.getInt("telefono"));
+           
+           return persona; 
+
+//resultado.getString("nombre") + " " + resultado.getInt("edad") + " " + resultado.getString("profesion") + " " + resultado.getInt("telefono");
        }
        else {
                 //cero filas seleccionadas
-                   return "No hay datos";
+                   return null;
                }
         }
         
