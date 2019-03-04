@@ -48,7 +48,11 @@ public class BaseDeDatos {
                       }
     }
     
-    
+        public void cerrar() throws SQLException{
+        con.close();
+        
+        
+    }
     
     
 }

@@ -8,6 +8,7 @@ public class PersonasDAO {
     
     private Connection con;
     private Persona persona;
+    
     public PersonasDAO() {
     }
 

@@ -1,9 +1,17 @@
 
 package Controladora;
 
+import Excepciones.CampoIncorrecto;
+import Excepciones.CampoVacio;
 import Modelo.BaseDeDatos;
 import Vista.VentanaAltaEventos;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.print.attribute.standard.DateTimeAtCompleted;
 
 public class T9E2 {
  
@@ -11,6 +19,7 @@ public class T9E2 {
     private static VentanaAltaEventos v1;
     private static BaseDeDatos bd;
     private static Connection con;
+    private static LocalDate fecha;
 
     public static void main(String[] args) {
     
@@ -30,11 +39,96 @@ public class T9E2 {
         
     }
     
+    
       public static void crearVentana(){
           
           v1 = new VentanaAltaEventos();
           v1.setVisible(true);
           
+          
+      }
+      
+      public static void validarId(String id)throws Exception{
+          
+           if(id.isEmpty()){
+                   throw new CampoVacio();
+               }
+               
+           else {
+           Pattern p = Pattern.compile("^[0-9]{1,3}$");
+           Matcher m = p.matcher(id);
+
+           if(m.matches()==false){
+         throw new CampoIncorrecto();
+           }
+           }
+
+      }
+      public static void validarNombre(String nombre)throws Exception{
+          
+          
+          if(nombre.isEmpty()){
+               throw new CampoVacio();
+          }
+          
+        else {
+           Pattern p = Pattern.compile("^[A-Z][a-z]{1,20}$");
+           Matcher m = p.matcher(nombre);
+
+           if(m.matches()==false){
+         throw new CampoIncorrecto();
+           }
+           }
+      }
+      
+      
+      public static void validarLocalizacion(String localizacion) throws Exception {
+          
+          if(localizacion.isEmpty()){
+              throw new CampoVacio();
+          }
+          
+          else {
+           Pattern p = Pattern.compile("^[A-Z][a-z]{1,30}$");
+           Matcher m = p.matcher(localizacion);
+              
+           if (m.matches()==false){
+               
+               throw new CampoIncorrecto();
+           }
+          
+              
+          }
+          
+      }
+      
+      
+      public static void validarFecha(String fechaEvento)throws Exception{
+       
+        
+     if (fechaEvento.isEmpty()){
+         
+         throw new CampoVacio();
+         
+     }
+     
+          
+     else { 
+           Pattern p = Pattern.compile("^\\d{1 ,2}/\\d{1 ,2}/\\d{2}$");
+           Matcher m = p.matcher(fechaEvento);
+           if(m.matches()){
+           
+           DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/mm/yy");
+          LocalDate fecha = LocalDate.parse(fechaEvento,f);
+           }
+           
+           else {
+               
+               throw new CampoIncorrecto();
+               
+           }
+     }
+           
           
       }
     
