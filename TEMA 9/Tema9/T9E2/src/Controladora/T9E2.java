@@ -4,9 +4,12 @@ package Controladora;
 import Excepciones.CampoIncorrecto;
 import Excepciones.CampoVacio;
 import Modelo.BaseDeDatos;
+import Modelo.Evento;
+import Modelo.EventoDAO;
 import Vista.VentanaAltaEventos;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
@@ -20,7 +23,7 @@ public class T9E2 {
     private static BaseDeDatos bd;
     private static Connection con;
     private static LocalDate fecha;
-
+    private static Evento e;
     public static void main(String[] args) {
     
         bd = new BaseDeDatos();
@@ -103,33 +106,62 @@ public class T9E2 {
       }
       
       
-      public static void validarFecha(String fechaEvento)throws Exception{
+      public static void validarFecha(LocalDate fechaEvento)throws Exception{
        
         
-     if (fechaEvento.isEmpty()){
+  
          
-         throw new CampoVacio();
+      
          
      }
      
           
-     else { 
-           Pattern p = Pattern.compile("^\\d{1 ,2}/\\d{1 ,2}/\\d{2}$");
-           Matcher m = p.matcher(fechaEvento);
-           if(m.matches()){
-           
-           DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/mm/yy");
-          LocalDate fecha = LocalDate.parse(fechaEvento,f);
-           }
-           
-           else {
-               
-               throw new CampoIncorrecto();
-               
-           }
-     }
-           
+//     else { 
+////           Pattern p = Pattern.compile("^\\d{1 ,2}/\\d{1 ,2}/\\d{2}$");
+////           Matcher m = p.matcher(fechaEvento);
+////           if(m.matches()){
+////           
+////          DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/mm/yy");
+////          LocalDate fecha = LocalDate.parse(fechaEvento,f);
+////           }
+////           
+////           else {
+////               
+////               throw new CampoIncorrecto();
+////               
+////           }
+////     }
+//           
+//          
+//      }
+   
+
+      public static void validarLimite(Integer limite) throws Exception{
+          
+          if (limite < 10){
+              throw new CampoIncorrecto();
+     
+          }
           
       }
-    
+      
+      public static void añadirEvento(Integer id, String nombre, String lugar, LocalDate Fecha, LocalTime HoraInicio, LocalTime HoraFin, Integer LimitePersonas){
+          
+          
+           e = new Evento();
+           
+           
+           EventoDAO.darAlta(e);
+          
+//          DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+//          LocalDate fechaEvento = LocalDate.parse(Fecha, f);
+//          
+          
+   
+          
+          
+          
+                  }
 }
+      //}
+//} 

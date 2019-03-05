@@ -2,6 +2,8 @@
 package Modelo;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Evento {
     
@@ -10,8 +12,8 @@ public class Evento {
     private String nombre;
     private String localizacion;
     private LocalDate fecha;
-    private LocalDate horaInicio;
-    private LocalDate horaFin;
+    private LocalTime horaInicio;
+    private LocalTime horaFin;
     private int limitePersonas;
 
     public int getId() {
@@ -46,19 +48,19 @@ public class Evento {
         this.fecha = fecha;
     }
 
-    public LocalDate getHoraInicio() {
+    public LocalTime getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalDate horaInicio) {
+    public void setHoraInicio(LocalTime horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalDate getHoraFin() {
+    public LocalTime getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(LocalDate horaFin) {
+    public void setHoraFin(LocalTime horaFin) {
         this.horaFin = horaFin;
     }
 
@@ -70,7 +72,7 @@ public class Evento {
         this.limitePersonas = limitePersonas;
     }
 
-    public Evento(int Id, String nombre, String localizacion, LocalDate fecha, LocalDate horaInicio, LocalDate horaFin, int limitePersonas) {
+    public Evento(int Id, String nombre, String localizacion, LocalDate fecha, LocalTime horaInicio, LocalTime horaFin, int limitePersonas) {
         this.Id = Id;
         this.nombre = nombre;
         this.localizacion = localizacion;
