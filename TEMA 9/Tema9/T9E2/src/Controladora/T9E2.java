@@ -24,6 +24,7 @@ public class T9E2 {
     private static Connection con;
     private static LocalDate fecha;
     private static Evento e;
+    private static EventoDAO oEventoDAO;
     public static void main(String[] args) {
     
         bd = new BaseDeDatos();
@@ -145,13 +146,14 @@ public class T9E2 {
           
       }
       
-      public static void añadirEvento(Integer id, String nombre, String lugar, LocalDate Fecha, LocalTime HoraInicio, LocalTime HoraFin, Integer LimitePersonas){
+      public static void añadirEvento(Integer id, String nombre, String lugar, LocalDate Fecha, LocalTime HoraInicio, LocalTime HoraFin, Integer LimitePersonas) throws SQLException{
           
           
-           e = new Evento();
+           e = new Evento(id,nombre,lugar,fecha,HoraInicio,HoraFin,LimitePersonas);
            
            
-           EventoDAO.darAlta(e);
+           
+           oEventoDAO.darAlta(e);
           
 //          DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/YYYY");
 //          LocalDate fechaEvento = LocalDate.parse(Fecha, f);

@@ -9,7 +9,7 @@ import java.time.LocalTime;
 
 public class EventoDAO {
      private Connection con;
-    private Evento e;
+    private Evento ev;
 
     public EventoDAO() {
     }
@@ -33,7 +33,7 @@ public class EventoDAO {
             
             
     
-    public void darAlta() throws SQLException{
+    public void darAlta(Evento ev) throws SQLException{
         
 
     
@@ -46,19 +46,19 @@ public class EventoDAO {
           
        //PreparedStatement
        //creamos plantillas
-       String plantilla = "INSERT INTO persona values(?,?,?,?,?,?);";
+       String plantilla = "INSERT INTO eventos values(?,?,?,?,?,?);";
        
        java.sql.PreparedStatement ps = con.prepareStatement(plantilla);
-         ps.setInt(1,e.getId());
-         ps.setString(2,e.getNombre());
-         ps.setString(3,e.getLocalizacion());
-         ps.setDate(4,conversionDate(e.getFecha()));
-         ps.setTime(5, conversionHora(e.getHoraInicio()));
-         ps.setTime(6, conversionHora(e.getHoraFin()));
-         ps.setInt(7, e.getLimitePersonas());
+         ps.setInt(1,ev.getId());
+         ps.setString(2,ev.getNombre());
+         ps.setString(3,ev.getLocalizacion());
+         ps.setDate(4,conversionDate(ev.getFecha()));
+         ps.setTime(5, conversionHora(ev.getHoraInicio()));
+         ps.setTime(6, conversionHora(ev.getHoraFin()));
+         ps.setInt(7, ev.getLimitePersonas());
        
          
-         int numeroFilasActualizadas= ps.executeUpdate();
+         int numeroFilasActualizadas = ps.executeUpdate();
         
        } 
       

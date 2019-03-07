@@ -8,10 +8,13 @@ package Vista;
 import Controladora.T9E2;
 import Excepciones.CampoIncorrecto;
 import Excepciones.CampoVacio;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class VentanaAltaEventos extends javax.swing.JFrame {
@@ -36,9 +39,6 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTimeChooser1 = new lu.tudor.santec.jtimechooser.JTimeChooser();
-        dateChooserDialog1 = new datechooser.beans.DateChooserDialog();
-        dateChooserDialog2 = new datechooser.beans.DateChooserDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -249,7 +249,9 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
 //          T9E2.validarHoraI(HoraInicio);
 //        T9E2.validarHoraF();
             T9E2.validarLimite(Integer.parseInt(tfLimitePersonas.getText()));
+            T9E2.añadirEvento(Integer.parseInt(tfId.getText()),tfNombre.getText(),tfLugar.getText(),fechaReal,HoraInicio,HoraFin,Integer.parseInt(tfLimitePersonas.getText()));
         }
+        
         catch (CampoVacio e){
             JOptionPane.showMessageDialog(this, "Campo Obligatorio");
             
@@ -265,7 +267,11 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
             
         }
         
-        T9E2.añadirEvento(Integer.parseInt(tfId.getText()),tfNombre.getText(),tfLugar.getText(),fechaReal,HoraInicio,HoraFin,Integer.parseInt(tfLimitePersonas.getText()));
+        try {
+            T9E2.añadirEvento(Integer.parseInt(tfId.getText()),tfNombre.getText(),tfLugar.getText(),fechaReal,HoraInicio,HoraFin,Integer.parseInt(tfLimitePersonas.getText()));
+        } catch (SQLException ex) {
+            Logger.getLogger(VentanaAltaEventos.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_bAceptarActionPerformed
 
@@ -308,8 +314,6 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAceptar;
-    private datechooser.beans.DateChooserDialog dateChooserDialog1;
-    private datechooser.beans.DateChooserDialog dateChooserDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -322,7 +326,6 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private lu.tudor.santec.jtimechooser.JTimeChooser jTimeChooser1;
     private org.jdesktop.swingx.JXDatePicker tfFecha;
     private javax.swing.JFormattedTextField tfHoraF;
     private javax.swing.JFormattedTextField tfHoraI;
