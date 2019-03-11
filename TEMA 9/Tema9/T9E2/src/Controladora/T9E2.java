@@ -51,7 +51,7 @@ public class T9E2 {
           
           
       }
-      
+      //////////////////
       public static void validarId(String id)throws Exception{
           
            if(id.isEmpty()){
@@ -107,15 +107,15 @@ public class T9E2 {
       }
       
       
-      public static void validarFecha(LocalDate fechaEvento)throws Exception{
-       
-        
-  
-         
-      
-         
-     }
-     
+//      public static void validarFecha(LocalDate fechaEvento)throws Exception{
+//       
+//        
+//  
+//         
+//      
+//         
+//     }
+     /////////////////////
           
 //     else { 
 ////           Pattern p = Pattern.compile("^\\d{1 ,2}/\\d{1 ,2}/\\d{2}$");
@@ -149,7 +149,7 @@ public class T9E2 {
       public static void añadirEvento(Integer id, String nombre, String lugar, LocalDate Fecha, LocalTime HoraInicio, LocalTime HoraFin, Integer LimitePersonas) throws SQLException{
           
           
-           e = new Evento(id,nombre,lugar,fecha,HoraInicio,HoraFin,LimitePersonas);
+           e = new Evento(id,nombre,lugar,Fecha,HoraInicio,HoraFin,LimitePersonas);
            
            
            

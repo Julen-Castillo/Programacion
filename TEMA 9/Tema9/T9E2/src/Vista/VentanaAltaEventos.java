@@ -57,15 +57,15 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
         bAceptar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         tfLimitePersonas = new javax.swing.JTextField();
-        tfHoraI = new javax.swing.JFormattedTextField();
-        tfHoraF = new javax.swing.JFormattedTextField();
         tfFecha = new com.github.lgooddatepicker.components.DatePicker();
+        tfHoraI = new com.github.lgooddatepicker.components.TimePicker();
+        tfHoraF = new com.github.lgooddatepicker.components.TimePicker();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("REGISTRA TU EVENTO");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
 
         jLabel2.setText("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
@@ -97,10 +97,6 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
 
         jLabel13.setText("LIMITE DE PERSONAS:");
 
-        tfHoraI.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
-
-        tfHoraF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,30 +125,27 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
                                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(132, 132, 132)
-                                        .addComponent(tfHoraI))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(148, 148, 148)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(148, 148, 148)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfLimitePersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(31, 31, 31)
-                                        .addComponent(bAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(tfHoraI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGap(406, 406, 406)
-                                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel13)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(tfLimitePersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(31, 31, 31)
+                                                .addComponent(bAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGap(382, 382, 382)
-                                                .addComponent(tfHoraF, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 336, Short.MAX_VALUE))))))
+                                                .addGap(406, 406, 406)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(tfHoraF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(0, 336, Short.MAX_VALUE))))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(173, 173, 173)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -211,7 +204,7 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tfHoraI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(23, 23, 23)
+                                .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(bAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -231,35 +224,21 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
-           
-
-      
+   
 //        DateTimeFormatter Fechita = DateTimeFormatter.ofPattern("dd-MM-yy");
 //        String formatDateTime = fechaReal.format(Fechita);
-        
-       
-      
 
-
-      
-     LocalTime HoraInicio = LocalTime.parse(tfHoraI.getText());
-     LocalTime HoraFin = LocalTime.parse(tfHoraF.getText());
-       
-        
-
-   
         try {
-            
-          T9E2.validarId(tfId.getText());
-          T9E2.validarNombre(tfNombre.getText());
-          T9E2.validarLocalizacion(tfLugar.getText());
-     
-//          T9E2.validarHoraI(HoraInicio);
-//        T9E2.validarHoraF();
-            T9E2.validarLimite(Integer.parseInt(tfLimitePersonas.getText()));
-            T9E2.añadirEvento(Integer.parseInt(tfId.getText()),tfNombre.getText(),tfLugar.getText(),tfFecha.getDate(),HoraInicio,HoraFin,Integer.parseInt(tfLimitePersonas.getText()));
+
+  T9E2.validarId(tfId.getText());
+    T9E2.validarNombre(tfNombre.getText());
+  T9E2.validarLocalizacion(tfLugar.getText());
+  
+ 
+   T9E2.validarLimite(Integer.parseInt(tfLimitePersonas.getText()));
+
+  T9E2.añadirEvento(Integer.parseInt(tfId.getText()),tfNombre.getText(),tfLugar.getText(),tfFecha.getDate(),tfHoraI.getTime(),tfHoraF.getTime(),Integer.parseInt(tfLimitePersonas.getText()));
         }
-        
         catch (CampoVacio e){
             JOptionPane.showMessageDialog(this, "Campo Obligatorio");
             
@@ -273,7 +252,8 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
         
         catch (Exception e){
             
-        }
+    
+        } 
         
        
          
@@ -334,8 +314,8 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private com.github.lgooddatepicker.components.DatePicker tfFecha;
-    private javax.swing.JFormattedTextField tfHoraF;
-    private javax.swing.JFormattedTextField tfHoraI;
+    private com.github.lgooddatepicker.components.TimePicker tfHoraF;
+    private com.github.lgooddatepicker.components.TimePicker tfHoraI;
     private javax.swing.JTextField tfId;
     private javax.swing.JTextField tfLimitePersonas;
     private javax.swing.JTextField tfLugar;
