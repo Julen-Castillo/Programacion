@@ -10,6 +10,7 @@ import Excepciones.CampoIncorrecto;
 import Excepciones.CampoVacio;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import static java.time.LocalDate.now;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
@@ -56,9 +57,9 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
         bAceptar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         tfLimitePersonas = new javax.swing.JTextField();
-        tfFecha = new org.jdesktop.swingx.JXDatePicker();
         tfHoraI = new javax.swing.JFormattedTextField();
         tfHoraF = new javax.swing.JFormattedTextField();
+        tfFecha = new com.github.lgooddatepicker.components.DatePicker();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -164,8 +165,8 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(412, 412, 412)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tfFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -231,8 +232,15 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
            
-      String Fecha = tfFecha.getDate().toString();
-      LocalDate fechaReal = LocalDate.parse(Fecha);
+
+      
+//        DateTimeFormatter Fechita = DateTimeFormatter.ofPattern("dd-MM-yy");
+//        String formatDateTime = fechaReal.format(Fechita);
+        
+       
+      
+
+
       
      LocalTime HoraInicio = LocalTime.parse(tfHoraI.getText());
      LocalTime HoraFin = LocalTime.parse(tfHoraF.getText());
@@ -245,11 +253,11 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
           T9E2.validarId(tfId.getText());
           T9E2.validarNombre(tfNombre.getText());
           T9E2.validarLocalizacion(tfLugar.getText());
-          T9E2.validarFecha(fechaReal);
+     
 //          T9E2.validarHoraI(HoraInicio);
 //        T9E2.validarHoraF();
             T9E2.validarLimite(Integer.parseInt(tfLimitePersonas.getText()));
-            T9E2.añadirEvento(Integer.parseInt(tfId.getText()),tfNombre.getText(),tfLugar.getText(),fechaReal,HoraInicio,HoraFin,Integer.parseInt(tfLimitePersonas.getText()));
+            T9E2.añadirEvento(Integer.parseInt(tfId.getText()),tfNombre.getText(),tfLugar.getText(),tfFecha.getDate(),HoraInicio,HoraFin,Integer.parseInt(tfLimitePersonas.getText()));
         }
         
         catch (CampoVacio e){
@@ -267,11 +275,10 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
             
         }
         
-        try {
-            T9E2.añadirEvento(Integer.parseInt(tfId.getText()),tfNombre.getText(),tfLugar.getText(),fechaReal,HoraInicio,HoraFin,Integer.parseInt(tfLimitePersonas.getText()));
-        } catch (SQLException ex) {
-            Logger.getLogger(VentanaAltaEventos.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
+         
+      
+        
         
     }//GEN-LAST:event_bAceptarActionPerformed
 
@@ -326,7 +333,7 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private org.jdesktop.swingx.JXDatePicker tfFecha;
+    private com.github.lgooddatepicker.components.DatePicker tfFecha;
     private javax.swing.JFormattedTextField tfHoraF;
     private javax.swing.JFormattedTextField tfHoraI;
     private javax.swing.JTextField tfId;
