@@ -38,6 +38,7 @@ public class T9E2 {
        
         
      crearVentana();
+     
         
         
         
@@ -151,7 +152,7 @@ public class T9E2 {
           
            e = new Evento(id,nombre,lugar,Fecha,HoraInicio,HoraFin,LimitePersonas);
            
-           
+           oEventoDAO = new EventoDAO(con);
            
            oEventoDAO.darAlta(e);
           

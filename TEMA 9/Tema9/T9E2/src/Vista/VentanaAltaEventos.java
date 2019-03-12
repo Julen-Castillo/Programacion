@@ -232,10 +232,8 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
 
   T9E2.validarId(tfId.getText());
     T9E2.validarNombre(tfNombre.getText());
-  T9E2.validarLocalizacion(tfLugar.getText());
-  
- 
-   T9E2.validarLimite(Integer.parseInt(tfLimitePersonas.getText()));
+    T9E2.validarLocalizacion(tfLugar.getText());
+    T9E2.validarLimite(Integer.parseInt(tfLimitePersonas.getText()));
 
   T9E2.añadirEvento(Integer.parseInt(tfId.getText()),tfNombre.getText(),tfLugar.getText(),tfFecha.getDate(),tfHoraI.getTime(),tfHoraF.getTime(),Integer.parseInt(tfLimitePersonas.getText()));
         }
@@ -252,7 +250,7 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
         
         catch (Exception e){
             
-    
+                    JOptionPane.showMessageDialog(this,e.getClass() + e.getMessage());
         } 
         
        

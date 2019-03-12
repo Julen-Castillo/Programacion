@@ -1,10 +1,10 @@
 
 package Modelo;
 
-import com.mysql.jdbc.*;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import javax.swing.JOptionPane;
 
 
 public class EventoDAO {
@@ -46,25 +46,26 @@ public class EventoDAO {
           
        //PreparedStatement
        //creamos plantillas
-       String plantilla = "INSERT INTO eventos values(?,?,?,?,?,?);";
+       String plantilla = "INSERT INTO eventos (Id, Nombre, Localizacion,Fecha,Hora_inicio,Hora_fin,Limite_personas) values(?,?,?,?,?,?,?);";
        
        java.sql.PreparedStatement ps = con.prepareStatement(plantilla);
-         ps.setInt(1,event.getId());
-         ps.setString(2,event.getNombre());
-         ps.setString(3,event.getLocalizacion());
-         ps.setDate(4,conversionDate(event.getFecha()));
-         ps.setTime(5, conversionHora(event.getHoraInicio()));
-         ps.setTime(6, conversionHora(event.getHoraFin()));
-         ps.setInt(7, event.getLimitePersonas());
+         ps.setInt(1,ev.getId());
+         ps.setString(2,ev.getNombre());
+         ps.setString(3,ev.getLocalizacion());
+         ps.setDate(4,conversionDate(ev.getFecha()));
+         ps.setTime(5, conversionHora(ev.getHoraInicio()));
+         ps.setTime(6, conversionHora(ev.getHoraFin()));
+         ps.setInt(7, ev.getLimitePersonas());
        
          
          int numeroFilasActualizadas = ps.executeUpdate();
+          JOptionPane.showMessageDialog(null, numeroFilasActualizadas);
         
        } 
       
       catch (Exception e){
    
-    
+           JOptionPane.showMessageDialog(null, e.getClass());
     }
    
     }
