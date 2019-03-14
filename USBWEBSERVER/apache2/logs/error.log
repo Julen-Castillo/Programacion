@@ -1,6 +1,5 @@
-[Mon Mar 11 22:51:42.094161 2019] [mpm_winnt:notice] [pid 9964:tid 628] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Mon Mar 11 22:51:42.095160 2019] [mpm_winnt:notice] [pid 9964:tid 628] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Mon Mar 11 22:51:42.095160 2019] [core:notice] [pid 9964:tid 628] AH00094: Command line: 'C:\\Users\\Julen\\Desktop\\Progra\\Programacion\\USBWEBSERVER/apache2/bin/httpd_usbwv8.exe -d C:/Users/Julen/Desktop/Progra/Programacion/USBWEBSERVER/apache2'
-[Mon Mar 11 22:51:42.112161 2019] [mpm_winnt:notice] [pid 9964:tid 628] AH00418: Parent: Created child process 8688
-[Mon Mar 11 22:51:43.681161 2019] [mpm_winnt:notice] [pid 8688:tid 844] AH00354: Child: Starting 64 worker threads.
-[Mon Mar 11 22:52:14.617165 2019] [:error] [pid 8688:tid 1360] [client ::1:61455] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in C:\\Users\\Julen\\Desktop\\Progra\\Programacion\\USBWEBSERVER\\root\\index.php on line 47
+[Thu Mar 14 17:50:16.489504 2019] [mpm_winnt:notice] [pid 11960:tid 892] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Thu Mar 14 17:50:16.489504 2019] [mpm_winnt:notice] [pid 11960:tid 892] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Thu Mar 14 17:50:16.489504 2019] [core:notice] [pid 11960:tid 892] AH00094: Command line: 'C:\\Users\\Julen\\Desktop\\Progra\\Programacion\\USBWEBSERVER/apache2/bin/httpd_usbwv8.exe -d C:/Users/Julen/Desktop/Progra/Programacion/USBWEBSERVER/apache2'
+[Thu Mar 14 17:50:16.580508 2019] [mpm_winnt:notice] [pid 11960:tid 892] AH00418: Parent: Created child process 10804
+[Thu Mar 14 17:50:17.446505 2019] [mpm_winnt:notice] [pid 10804:tid 856] AH00354: Child: Starting 64 worker threads.
