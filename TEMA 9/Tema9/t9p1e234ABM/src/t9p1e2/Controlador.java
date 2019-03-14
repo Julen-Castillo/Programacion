@@ -3,6 +3,7 @@ package t9p1e2;
 import Modelo.UML.Acontecimiento;
 import GUI.*;
 import Modelo.BD.*;
+import Modelo.UML.Persona;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -11,6 +12,7 @@ import java.time.LocalTime;
 public class Controlador {
    
     private static Acontecimiento acontecimiento;
+    private static Persona persona;
     
     private static VentanaPrincipal vp;
     private static VentanaAcontecimientos ve;
@@ -71,5 +73,12 @@ public class Controlador {
        acontecimiento.setHoraF(horaF);
        acontecimiento.setAforo(nro);
        AcontecimientoBD.modificar(acontecimiento);
+   }
+   
+   public static void darAlta(String dni, String nombre, String telefono) throws Exception {
+       
+        persona = new Persona(dni,nombre,telefono);
+        PersonaBD.alta(persona);
+       
    }
 }

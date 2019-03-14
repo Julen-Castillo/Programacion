@@ -7,6 +7,8 @@ import javax.swing.JOptionPane;
 import t9p1e2.Controlador;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
+    
+    private VentanaAltaPersona vap;
 
     public VentanaPrincipal() {
         this.setExtendedState(this.MAXIMIZED_BOTH);
@@ -29,8 +31,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         mAlta = new javax.swing.JMenuItem();
         mBaja = new javax.swing.JMenuItem();
         mModificacion = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mAltaPersona = new javax.swing.JMenuItem();
+        mListado = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mSalirListado = new javax.swing.JMenuItem();
         mSalirSinListado = new javax.swing.JMenuItem();
@@ -42,9 +44,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
+        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         bAlta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/alta.png"))); // NOI18N
         bAlta.setToolTipText("Alta de un acontecimeinto");
@@ -80,14 +82,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(bBorrar);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("Empresa");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel2.setText("XXXXXXXXXXX");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Dedicada a la organización de acontecimientos en Vitoria desde 1900");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
         jMenu1.setText("Acontecimientos");
 
@@ -115,16 +117,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(mModificacion);
 
-        jMenuItem2.setText("Alta Personas");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mAltaPersona.setText("Alta Personas");
+        mAltaPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mAltaPersonaActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(mAltaPersona);
 
-        jMenuItem1.setText("Listado Personas");
-        jMenu1.add(jMenuItem1);
+        mListado.setText("Listado Personas");
+        mListado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mListadoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mListado);
 
         jMenuBar1.add(jMenu1);
 
@@ -258,9 +265,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_mModificacionActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void mAltaPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAltaPersonaActionPerformed
+            vap = new VentanaAltaPersona();
+            vap.setVisible(true);
+    }//GEN-LAST:event_mAltaPersonaActionPerformed
+
+    private void mListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mListadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_mListadoActionPerformed
 
     public boolean mostrar(String datos)
     {
@@ -313,11 +325,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem mAlta;
+    private javax.swing.JMenuItem mAltaPersona;
     private javax.swing.JMenuItem mBaja;
+    private javax.swing.JMenuItem mListado;
     private javax.swing.JMenuItem mModificacion;
     private javax.swing.JMenuItem mSalirListado;
     private javax.swing.JMenuItem mSalirSinListado;
