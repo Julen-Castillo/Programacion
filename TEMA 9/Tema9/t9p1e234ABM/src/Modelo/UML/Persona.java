@@ -14,6 +14,9 @@ public class Persona {
     public Persona(String dni, String nombre, String telefono) {
     }
 
+    
+
+   
     public String getDni() {
         return dni;
     }
@@ -43,6 +46,13 @@ public class Persona {
     }
 
     public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public Persona(String dni, String nombre, String telefono, Empresa empresa) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.telefono = telefono;
         this.empresa = empresa;
     }
 

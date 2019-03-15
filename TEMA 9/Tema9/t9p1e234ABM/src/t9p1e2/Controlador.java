@@ -3,6 +3,7 @@ package t9p1e2;
 import Modelo.UML.Acontecimiento;
 import GUI.*;
 import Modelo.BD.*;
+import Modelo.UML.Empresa;
 import Modelo.UML.Persona;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,9 +14,11 @@ public class Controlador {
    
     private static Acontecimiento acontecimiento;
     private static Persona persona;
+    private static Empresa e;
     
     private static VentanaPrincipal vp;
     private static VentanaAcontecimientos ve;
+    private static Persona pbd;
     
     public static void main(String[] args) {       
         vp = new VentanaPrincipal();
@@ -75,10 +78,26 @@ public class Controlador {
        AcontecimientoBD.modificar(acontecimiento);
    }
    
-   public static void darAlta(String dni, String nombre, String telefono) throws Exception {
+   public static void darAlta(String dni, String nombre, String telefono, String empresa, String nombreEmpresa, String direccion, String telefonoEmpresa) throws Exception {
+   
+      e = new Empresa();
+      e.setNombre(empresa);
+      e.setDireccion(direccion);
+      e.setTelefono(telefonoEmpresa);
+      
+         EmpresaBD.alta(e);
        
-        persona = new Persona(dni,nombre,telefono);
+        persona = new Persona(dni,nombre,telefono, e);
         PersonaBD.alta(persona);
        
    }
+   
+   public static boolean buscarDatos (String nombre){
+       
+        pbd = new Persona();
+       
+       pbd = PersonaBD.consultar(nombre);
+           
+           return false;
+}
 }

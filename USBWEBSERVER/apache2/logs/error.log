@@ -1,5 +1,5 @@
-[Thu Mar 14 17:58:55.505908 2019] [mpm_winnt:notice] [pid 8720:tid 840] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Thu Mar 14 17:58:55.506908 2019] [mpm_winnt:notice] [pid 8720:tid 840] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Thu Mar 14 17:58:55.506908 2019] [core:notice] [pid 8720:tid 840] AH00094: Command line: 'C:\\Users\\Julen\\Desktop\\Progra\\Programacion\\USBWEBSERVER/apache2/bin/httpd_usbwv8.exe -d C:/Users/Julen/Desktop/Progra/Programacion/USBWEBSERVER/apache2'
-[Thu Mar 14 17:58:55.546904 2019] [mpm_winnt:notice] [pid 8720:tid 840] AH00418: Parent: Created child process 9680
-[Thu Mar 14 17:58:56.543908 2019] [mpm_winnt:notice] [pid 9680:tid 836] AH00354: Child: Starting 64 worker threads.
+[Fri Mar 15 11:34:04.040163 2019] [mpm_winnt:notice] [pid 7552:tid 880] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Fri Mar 15 11:34:04.040163 2019] [mpm_winnt:notice] [pid 7552:tid 880] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Fri Mar 15 11:34:04.040163 2019] [core:notice] [pid 7552:tid 880] AH00094: Command line: 'C:\\Users\\1gdaw03.ARRIAGAINFO\\Desktop\\EjerciciosProgramacion\\Programacion\\USBWEBSERVER/apache2/bin/httpd_usbwv8.exe -d C:/Users/1gdaw03.ARRIAGAINFO/Desktop/EjerciciosProgramacion/Programacion/USBWEBSERVER/apache2'
+[Fri Mar 15 11:34:04.071413 2019] [mpm_winnt:notice] [pid 7552:tid 880] AH00418: Parent: Created child process 284
+[Fri Mar 15 11:34:05.461993 2019] [mpm_winnt:notice] [pid 284:tid 860] AH00354: Child: Starting 64 worker threads.
