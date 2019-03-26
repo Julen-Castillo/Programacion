@@ -5,6 +5,7 @@ import Excepciones.*;
 import Modelo.UML.Acontecimiento;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import javax.swing.JOptionPane;
 
 public class VentanaAcontecimientos extends javax.swing.JFrame {
 
@@ -295,6 +296,16 @@ private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
        
     }
     
+    public  void mostrarDatos(Acontecimiento datos){
+        
+       String nombre = datos.getNombre();
+     
+      JOptionPane.showMessageDialog(this, nombre + "");
+        
+        
+        
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -328,6 +339,8 @@ private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
             }
         });
     }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAceptar;
     private javax.swing.JButton bSalir;

@@ -195,14 +195,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_bAltaActionPerformed
 
     private void mSalirListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mSalirListadoActionPerformed
-       try{
-            javax.swing.JOptionPane.showMessageDialog(this,Controlador.listado());
-            Controlador.terminar();
-       }
-       catch(Exception e)
-       {
-           javax.swing.JOptionPane.showMessageDialog(this,"Problemas con el listado al terminar");
-       }
+//       try{
+//            javax.swing.JOptionPane.showMessageDialog(this,Controlador.listado());
+//            Controlador.terminar();
+//       }
+//       catch(Exception e)
+//       {
+//           javax.swing.JOptionPane.showMessageDialog(this,"Problemas con el listado al terminar");
+//       }
     }//GEN-LAST:event_mSalirListadoActionPerformed
 
     private void mSalirSinListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mSalirSinListadoActionPerformed
@@ -234,7 +234,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         {
             String nombre = javax.swing.JOptionPane.showInputDialog(this,"Teclea el nombre del acontecimiento que quieres eliminar");
             validarNombre(nombre);
-            Controlador.borrarAcontecimiento(nombre);
+            Controlador.eliminarDatos(nombre);
+//            Controlador.borrarAcontecimiento(nombre);
             JOptionPane.showMessageDialog(this,"Acontecimiento borrado");
             
         }
@@ -271,7 +272,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mAltaPersonaActionPerformed
 
     private void mListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mListadoActionPerformed
-        // TODO add your handling code here:
+     
+        String nombre = JOptionPane.showInputDialog("Introduce la persona a buscar");
+        
+        Controlador.Consultar(nombre);
     }//GEN-LAST:event_mListadoActionPerformed
 
     public boolean mostrar(String datos)

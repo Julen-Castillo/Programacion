@@ -176,17 +176,17 @@ public class VentanaAltaPersona extends javax.swing.JFrame {
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
        
         
-        Existe = Controlador.buscarDatos(tfNombre.getText());
+//        Existe = Controlador.buscarDatos(tfNombre.getText());
+//        
+//        if(Existe == true)
         
-        if(Existe == true)
         
-        
-        try {
-           Controlador.darAlta(tfDni.getText(),tfNombre.getText(),tfTelefono.getText(),tfEmpresa.getText(),tfNombreEmpresa.getText(),tfDireccion.getText(),tfTelefonoEmpresa.getText());
-       } catch (Exception e) {
-           JOptionPane.showMessageDialog(this, e.getMessage() + " " + e.getClass());
-          
-       }
+//        try {
+//           Controlador.darAlta(tfDni.getText(),tfNombre.getText(),tfTelefono.getText(),tfEmpresa.getText(),tfNombreEmpresa.getText(),tfDireccion.getText(),tfTelefonoEmpresa.getText());
+//       } catch (Exception e) {
+//           JOptionPane.showMessageDialog(this, e.getMessage() + " " + e.getClass());
+//          
+//       }
     }//GEN-LAST:event_bAceptarActionPerformed
 
     private void tfEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEmpresaActionPerformed
