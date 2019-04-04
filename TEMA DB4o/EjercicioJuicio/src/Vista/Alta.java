@@ -5,6 +5,10 @@
  */
 package Vista;
 
+import ejerciciojuicio.EjercicioJuicio;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Julen
@@ -49,6 +53,8 @@ public Menu vMenu;
         tfApellidos = new javax.swing.JTextField();
         tfDireccion = new javax.swing.JTextField();
         tfTelefono = new javax.swing.JTextField();
+        bAceptar = new javax.swing.JButton();
+        bCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +71,15 @@ public Menu vMenu;
 
         jLabel6.setText("Telefono:");
 
+        bAceptar.setText("ACEPTAR");
+        bAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAceptarActionPerformed(evt);
+            }
+        });
+
+        bCancelar.setText("CANCELAR");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,14 +93,18 @@ public Menu vMenu;
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
                 .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfDni)
-                    .addComponent(tfNombre)
-                    .addComponent(tfApellidos)
-                    .addComponent(tfDireccion)
-                    .addComponent(tfTelefono))
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tfDni, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfApellidos, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfDireccion, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfTelefono, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bAceptar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bCancelar)))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,11 +131,23 @@ public Menu vMenu;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(tfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bCancelar)
+                    .addComponent(bAceptar))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
+    try {
+        EjercicioJuicio.darAlta(tfDni.getText(),tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText());
+    } catch (Exception ex) {
+        Logger.getLogger(Alta.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_bAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,6 +188,8 @@ public Menu vMenu;
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bAceptar;
+    private javax.swing.JButton bCancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
