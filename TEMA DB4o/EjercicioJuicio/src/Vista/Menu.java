@@ -10,12 +10,15 @@ package Vista;
  * @author 1gdaw03
  */
 public class Menu extends javax.swing.JFrame {
-
+public Alta vAlta;
+public String operacion;
+public Menu vMenu;
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
+        
     }
 
     /**
@@ -38,23 +41,23 @@ public class Menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mAltaCliente = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        mAltaAbogado = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        mAltaCaso = new javax.swing.JMenuItem();
+        mBajaCliente = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        mBajaAbogado = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        mBajaCaso = new javax.swing.JMenuItem();
+        mModificarCliente = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        mModificarAbogado = new javax.swing.JMenuItem();
         jSeparator7 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        mModificarCaso = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -77,53 +80,58 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu1.setText("Alta");
 
-        jMenuItem2.setText("Cliente");
-        jMenu1.add(jMenuItem2);
-        jMenu1.add(jSeparator1);
-
-        jMenuItem3.setText("Abogado");
-        jMenu1.add(jMenuItem3);
-        jMenu1.add(jSeparator2);
-
-        jMenuItem4.setText("Caso");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        mAltaCliente.setText("Cliente");
+        mAltaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                mAltaClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        jMenu1.add(mAltaCliente);
+        jMenu1.add(jSeparator1);
+
+        mAltaAbogado.setText("Abogado");
+        jMenu1.add(mAltaAbogado);
+        jMenu1.add(jSeparator2);
+
+        mAltaCaso.setText("Caso");
+        mAltaCaso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mAltaCasoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mAltaCaso);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Baja");
+        mBajaCliente.setText("Baja");
 
         jMenuItem5.setText("Cliente");
-        jMenu2.add(jMenuItem5);
-        jMenu2.add(jSeparator3);
+        mBajaCliente.add(jMenuItem5);
+        mBajaCliente.add(jSeparator3);
 
-        jMenuItem6.setText("Abogado");
-        jMenu2.add(jMenuItem6);
-        jMenu2.add(jSeparator4);
+        mBajaAbogado.setText("Abogado");
+        mBajaCliente.add(mBajaAbogado);
+        mBajaCliente.add(jSeparator4);
 
-        jMenuItem7.setText("Caso");
-        jMenu2.add(jMenuItem7);
+        mBajaCaso.setText("Caso");
+        mBajaCliente.add(mBajaCaso);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(mBajaCliente);
 
-        jMenu3.setText("Modificar");
+        mModificarCliente.setText("Modificar");
 
         jMenuItem8.setText("Cliente");
-        jMenu3.add(jMenuItem8);
-        jMenu3.add(jSeparator5);
+        mModificarCliente.add(jMenuItem8);
+        mModificarCliente.add(jSeparator5);
 
-        jMenuItem9.setText("Abogado");
-        jMenu3.add(jMenuItem9);
-        jMenu3.add(jSeparator7);
+        mModificarAbogado.setText("Abogado");
+        mModificarCliente.add(mModificarAbogado);
+        mModificarCliente.add(jSeparator7);
 
-        jMenuItem10.setText("Caso");
-        jMenu3.add(jMenuItem10);
+        mModificarCaso.setText("Caso");
+        mModificarCliente.add(mModificarCaso);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(mModificarCliente);
 
         setJMenuBar(jMenuBar1);
 
@@ -181,9 +189,19 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void mAltaCasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAltaCasoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_mAltaCasoActionPerformed
+
+    private void mAltaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAltaClienteActionPerformed
+     // operacion = "cliente";
+      vAlta = new Alta("cliente");
+      vAlta.setVisible(true);
+       
+       
+       
+       
+    }//GEN-LAST:event_mAltaClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,19 +247,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
@@ -249,5 +258,14 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator7;
+    private javax.swing.JMenuItem mAltaAbogado;
+    private javax.swing.JMenuItem mAltaCaso;
+    private javax.swing.JMenuItem mAltaCliente;
+    private javax.swing.JMenuItem mBajaAbogado;
+    private javax.swing.JMenuItem mBajaCaso;
+    private javax.swing.JMenu mBajaCliente;
+    private javax.swing.JMenuItem mModificarAbogado;
+    private javax.swing.JMenuItem mModificarCaso;
+    private javax.swing.JMenu mModificarCliente;
     // End of variables declaration//GEN-END:variables
 }
