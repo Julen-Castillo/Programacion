@@ -22,6 +22,7 @@ public Menu vMenu;
      */
     public Alta(String operacionActiva) {
       initComponents();
+     setLocationRelativeTo(null);
       operacion = operacionActiva;
       
         
@@ -142,8 +143,15 @@ public Menu vMenu;
     }// </editor-fold>//GEN-END:initComponents
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
-    try {
+
+        try {
+         if (operacion.equals("cliente"))
         EjercicioJuicio.darAlta(tfDni.getText(),tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText());
+         else{
+             if(operacion.equals("abogado")){
+                 
+             }
+         }
     } catch (Exception ex) {
         Logger.getLogger(Alta.class.getName()).log(Level.SEVERE, null, ex);
     }

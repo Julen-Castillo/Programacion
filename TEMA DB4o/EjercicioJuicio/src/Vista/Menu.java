@@ -5,6 +5,10 @@
  */
 package Vista;
 
+import ModeloBD.GenericoBD;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author 1gdaw03
@@ -18,6 +22,7 @@ public Menu vMenu;
      */
     public Menu() {
         initComponents();
+        setLocationRelativeTo(null);
         
     }
 
@@ -75,6 +80,11 @@ public Menu vMenu;
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iluminati.png"))); // NOI18N
 
         bSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir.png"))); // NOI18N
+        bSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSalirActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("SALIR");
 
@@ -202,6 +212,16 @@ public Menu vMenu;
        
        
     }//GEN-LAST:event_mAltaClienteActionPerformed
+
+    private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
+    try {
+       // GenericoBD.cerrarBD();
+        System.exit(0);
+    } catch (Exception ex) {
+        Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        
+    }//GEN-LAST:event_bSalirActionPerformed
 
     /**
      * @param args the command line arguments
