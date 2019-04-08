@@ -8,6 +8,7 @@ package Vista;
 import ejerciciojuicio.EjercicioJuicio;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +26,19 @@ public Menu vMenu;
      setLocationRelativeTo(null);
       operacion = operacionActiva;
       
-        
+     
+      
+      if(operacion.equals("bajacliente")){
+          
+          JOptionPane.showMessageDialog(this, "Escribe el DNI de la persona a dar de baja");
+          
+          tfNombre.setEnabled(false);
+          tfApellidos.setEnabled(false);
+          tfDireccion.setEnabled(false);
+          tfTelefono.setEnabled(false);
+      }
+      
+       
        
        
     }
@@ -43,6 +56,7 @@ public Menu vMenu;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -71,6 +85,12 @@ public Menu vMenu;
         jLabel5.setText("Direccion:");
 
         jLabel6.setText("Telefono:");
+
+        tfDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfDniActionPerformed(evt);
+            }
+        });
 
         bAceptar.setText("ACEPTAR");
         bAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +125,7 @@ public Menu vMenu;
                         .addComponent(bAceptar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bCancelar)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,8 +165,8 @@ public Menu vMenu;
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
 
         try {
-         if (operacion.equals("cliente"))
-        EjercicioJuicio.darAlta(tfDni.getText(),tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText());
+         if (operacion.equals("altacliente"))
+        EjercicioJuicio.darAlta(tfDni.getText(),tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText(),Integer.parseInt(tfTelefono.getText()));
          else{
              if(operacion.equals("abogado")){
                  
@@ -156,6 +176,12 @@ public Menu vMenu;
         Logger.getLogger(Alta.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_bAceptarActionPerformed
+
+    private void tfDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDniActionPerformed
+       
+        
+        EjercicioJuicio.Consultar(Integer.parseInt(tfDni.getText()));
+    }//GEN-LAST:event_tfDniActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,6 +224,7 @@ public Menu vMenu;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAceptar;
     private javax.swing.JButton bCancelar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

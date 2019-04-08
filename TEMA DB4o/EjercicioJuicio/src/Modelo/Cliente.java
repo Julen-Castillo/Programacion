@@ -6,15 +6,15 @@ import java.util.ArrayList;
 
 public class Cliente extends Persona {
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
-    public Cliente(String telefono) {
+    public Cliente(int telefono) {
         this.telefono = telefono;
     }
 
@@ -26,20 +26,27 @@ public class Cliente extends Persona {
         this.arCasos = arCasos;
     }
 
-    public Cliente(String telefono, ArrayList<Caso> arCasos) {
+    public Cliente(int telefono, ArrayList<Caso> arCasos) {
         this.telefono = telefono;
         this.arCasos = arCasos;
     }
 
-    public Cliente(String telefono, ArrayList<Caso> arCasos, String DNI, String nombre, String apellidos, String direccion) {
+    public Cliente(int telefono, ArrayList<Caso> arCasos, String DNI, String nombre, String apellidos, String direccion) {
         super(DNI, nombre, apellidos, direccion);
         this.telefono = telefono;
         this.arCasos = arCasos;
     }
+
+    public Cliente(String DNI, String nombre, String apellidos, String direccion, int telefono) {
+        super(DNI, nombre, apellidos, direccion);
+        this.telefono = telefono;
+    }
+
+   
     
     
 
-    private String telefono;
+    private int telefono;
     private ArrayList<Caso> arCasos;
 
 

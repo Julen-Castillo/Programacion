@@ -11,6 +11,7 @@ public class EjercicioJuicio {
     
     public static Menu vmenu;
     public static Persona c;
+    public static Cliente cl;
 
    
     public static void main(String[] args) {
@@ -25,11 +26,18 @@ public class EjercicioJuicio {
         vmenu.setVisible(true);
     }
     
-    public static void darAlta(String dni, String nombre, String apellidos, String direccion) throws Exception{
-        c = new Persona(dni,nombre,apellidos,direccion);
+    public static void darAlta(String dni, String nombre, String apellidos, String direccion, Integer telefono) throws Exception{
+        cl = new Cliente(dni,nombre,apellidos,direccion,telefono);
         
-        ClienteBD.alta(c);
-
+        ClienteBD.alta(cl);
+        
+       
+    }
+    
+    public static void Consultar (Integer dni){
+       cl = new Cliente(dni);
+       
+       ClienteBD.baja(cl);
        
     }
     

@@ -19,9 +19,7 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public Persona(String dni, String nombre, String apellidos, String direccion, Integer telefono) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     public String getDNI() {
         return DNI;

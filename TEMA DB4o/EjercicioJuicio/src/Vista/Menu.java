@@ -52,13 +52,13 @@ public Menu vMenu;
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         mAltaCaso = new javax.swing.JMenuItem();
         mBajaCliente = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        mBajaClient = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         mBajaAbogado = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
         mBajaCaso = new javax.swing.JMenuItem();
         mModificarCliente = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        mModificarClient = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
         mModificarAbogado = new javax.swing.JMenuItem();
         jSeparator7 = new javax.swing.JPopupMenu.Separator();
@@ -115,8 +115,13 @@ public Menu vMenu;
 
         mBajaCliente.setText("Baja");
 
-        jMenuItem5.setText("Cliente");
-        mBajaCliente.add(jMenuItem5);
+        mBajaClient.setText("Cliente");
+        mBajaClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mBajaClientActionPerformed(evt);
+            }
+        });
+        mBajaCliente.add(mBajaClient);
         mBajaCliente.add(jSeparator3);
 
         mBajaAbogado.setText("Abogado");
@@ -130,11 +135,16 @@ public Menu vMenu;
 
         mModificarCliente.setText("Modificar");
 
-        jMenuItem8.setText("Cliente");
-        mModificarCliente.add(jMenuItem8);
+        mModificarClient.setText("Cliente");
+        mModificarCliente.add(mModificarClient);
         mModificarCliente.add(jSeparator5);
 
         mModificarAbogado.setText("Abogado");
+        mModificarAbogado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mModificarAbogadoActionPerformed(evt);
+            }
+        });
         mModificarCliente.add(mModificarAbogado);
         mModificarCliente.add(jSeparator7);
 
@@ -205,7 +215,7 @@ public Menu vMenu;
 
     private void mAltaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAltaClienteActionPerformed
      // operacion = "cliente";
-      vAlta = new Alta("cliente");
+      vAlta = new Alta("altacliente");
       vAlta.setVisible(true);
        
        
@@ -222,6 +232,15 @@ public Menu vMenu;
     }
         
     }//GEN-LAST:event_bSalirActionPerformed
+
+    private void mBajaClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mBajaClientActionPerformed
+        vAlta = new Alta("bajacliente");
+        vAlta.setVisible(true);
+    }//GEN-LAST:event_mBajaClientActionPerformed
+
+    private void mModificarAbogadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mModificarAbogadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mModificarAbogadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,8 +288,6 @@ public Menu vMenu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
@@ -283,9 +300,11 @@ public Menu vMenu;
     private javax.swing.JMenuItem mAltaCliente;
     private javax.swing.JMenuItem mBajaAbogado;
     private javax.swing.JMenuItem mBajaCaso;
+    private javax.swing.JMenuItem mBajaClient;
     private javax.swing.JMenu mBajaCliente;
     private javax.swing.JMenuItem mModificarAbogado;
     private javax.swing.JMenuItem mModificarCaso;
+    private javax.swing.JMenuItem mModificarClient;
     private javax.swing.JMenu mModificarCliente;
     // End of variables declaration//GEN-END:variables
 }
