@@ -4,6 +4,7 @@ package ejerciciojuicio;
 import Modelo.Cliente;
 import Modelo.Persona;
 import ModeloBD.ClienteBD;
+import Vista.Alta;
 import Vista.Menu;
 
 
@@ -12,6 +13,8 @@ public class EjercicioJuicio {
     public static Menu vmenu;
     public static Persona c;
     public static Cliente cl;
+    public static Alta va;
+    
 
    
     public static void main(String[] args) {
@@ -34,10 +37,18 @@ public class EjercicioJuicio {
        
     }
     
-    public static void Consultar (Integer dni){
+    public static void Consultar (String dni) throws Exception{
        cl = new Cliente(dni);
        
-       ClienteBD.baja(cl);
+   cl =  ClienteBD.consultar(cl);
+  // if(cl == null)
+  
+         va = new Alta();
+       
+       if(va.Confirmar()== true){
+           ClienteBD.borrar(cl);
+           
+       }
        
     }
     

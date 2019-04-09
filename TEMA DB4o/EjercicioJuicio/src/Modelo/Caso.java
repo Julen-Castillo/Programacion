@@ -9,7 +9,7 @@ public class Caso {
     
     private Integer Id;
     private LocalDate fechaInicio;
-    private LocalDate fechaFin;
+
     private String dominio; //tramite o archivado
     
     private Cliente cliente;
@@ -21,7 +21,7 @@ public class Caso {
     public Caso(Integer Id, LocalDate fechaInicio, LocalDate fechaFin, String dominio, Cliente cliente, ArrayList<Abogado> aAbogados) {
         this.Id = Id;
         this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
+
         this.dominio = dominio;
         this.cliente = cliente;
         this.aAbogados = aAbogados;
@@ -44,13 +44,7 @@ public class Caso {
         this.fechaInicio = fechaInicio;
     }
 
-    public LocalDate getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
-    }
+  
 
     public String getDominio() {
         return dominio;

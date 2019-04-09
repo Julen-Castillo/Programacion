@@ -12,6 +12,10 @@ public class Persona {
     public Persona() {
     }
 
+    public Persona(String DNI) {
+        this.DNI = DNI;
+    }
+
     public Persona(String DNI, String nombre, String apellidos, String direccion) {
         this.DNI = DNI;
         this.nombre = nombre;

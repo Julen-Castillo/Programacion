@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 public class Alta extends javax.swing.JFrame {
 public String operacion;
 public Menu vMenu;
+public int confirmacion;
 
     /**
      * Creates new form Alta
@@ -42,10 +43,14 @@ public Menu vMenu;
        
        
     }
+    
+     public Alta() {
+      initComponents();
 
-    private Alta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+     }
+    
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -168,7 +173,10 @@ public Menu vMenu;
          if (operacion.equals("altacliente"))
         EjercicioJuicio.darAlta(tfDni.getText(),tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText(),Integer.parseInt(tfTelefono.getText()));
          else{
-             if(operacion.equals("abogado")){
+              if(operacion.equals("bajacliente")){
+       //           JOptionPane.showMessageDialog(this, "Persona Eliminada");
+                  
+               
                  
              }
          }
@@ -177,10 +185,25 @@ public Menu vMenu;
     }
     }//GEN-LAST:event_bAceptarActionPerformed
 
+   public boolean Confirmar(){
+        
+        confirmacion = JOptionPane.showConfirmDialog(this, "Estas seguro que quieres eliminar a esta persona?");
+        if(confirmacion == 0)
+            return true;
+        
+        else 
+            return false;
+    }
+    
     private void tfDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDniActionPerformed
        
         
-        EjercicioJuicio.Consultar(Integer.parseInt(tfDni.getText()));
+    try {
+        EjercicioJuicio.Consultar(tfDni.getText());
+        
+    } catch (Exception ex) {
+        Logger.getLogger(Alta.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }//GEN-LAST:event_tfDniActionPerformed
 
     /**

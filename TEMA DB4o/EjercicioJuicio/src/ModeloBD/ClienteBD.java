@@ -40,15 +40,15 @@ public class ClienteBD {
   
     }
     
-    public static Cliente baja(Cliente cl) throws SQLException, Exception {
+    public static Cliente consultar(Cliente cl) throws SQLException, Exception {
         
           GenericoBD.abrirBD();
         
-         plantilla = "select * from personas where dni = ?";
+         plantilla = "select * from cliente where dni = ?";
         sentenciaPre = GenericoBD.getCon().prepareStatement(plantilla);
         sentenciaPre.setString(1,cl.getDNI());
         resultado = sentenciaPre.executeQuery();
-        if (resultado.next()){
+
             if (resultado.next())
             {
                 // Completo el objeto recibido.
@@ -62,15 +62,25 @@ public class ClienteBD {
             }
             else
                 cl =  null;
-            
-            
-          
-        }
+
+        
           resultado.close();
              GenericoBD.cerrarBD();
              return cl;
         
         
+    }
+    
+    public static void borrar(Cliente cl) throws SQLException, Exception {
+         GenericoBD.abrirBD();
+        plantilla = "delete from cliente where dni = ?";
+        sentenciaPre = GenericoBD.getCon().prepareStatement(plantilla);
+        sentenciaPre.setString(1,cl.getDNI());
+            
+        int n = sentenciaPre.executeUpdate();
+        
+        
+        GenericoBD.cerrarBD();
     }
 }
     
